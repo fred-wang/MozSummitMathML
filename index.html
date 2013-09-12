@@ -6,14 +6,14 @@
     <link rel="stylesheet" type="text/css" href="webfonts/webfonts.css"/>
     <style type="text/css">
       body {
-      padding: 0; margin: 0;
-      background: grey;
-      overflow: hidden;
+        padding: 0; margin: 0;
+        background: grey;
+        overflow: hidden;
       }
 
       table, td {
-      border: 1px solid white;
-      border-collapse: collapse;
+        border: 1px solid white;
+        border-collapse: collapse;
       }
 
       pre {
@@ -22,30 +22,30 @@
       }
 
       #slides {
-      background: #030;
-      width: 1024px;
-      height: 756px;
-      margin: auto; 
+        background: #030;
+        width: 1024px;
+        height: 756px;
+        margin: auto; 
       }
 
       #slides div, #slides p {
-      font-family: 'Neo Euler';
-      font-size: 80px;
-      color: white;
-      width: 1024px;
-      text-align: center;
+        font-family: 'Neo Euler';
+        font-size: 80px;
+        color: white;
+        width: 1024px;
+        text-align: center;
       }
 
-      mi, mtext, mn { font-family: 'Neo Euler'; }
+      mi, mtext, mn { font-family: 'Neo Euler', 'Amiri'; }
       math.mathmlstyle mo { color: #faa;  }
       math.mathmlstyle mfrac { text-shadow: black 10px 12px 1px; }
-      math.arabic { font-size: 30px; font-family: Amiri; }
+      math.arabic { font-size: 30px; }
 
-      ul.history {
-      font-size: 30px;
-      text-align: left;
+      ul {
+        font-size: 30px;
+        text-align: left;
       }
-      ul.history li {
+      ul li {
         margin-top: .2em;
         margin-bottom: .2em;
       }
@@ -79,7 +79,6 @@
         setbevelled();
 
         running = false;
-        fullScreen = false;
         nextSlide();
       }
 
@@ -98,7 +97,7 @@
 
       function handleKeyEvent(e)
       {
-        if (e.keyCode >= 32)
+        if (e.keyCode == 32)
           ensureFullScreen();
 
         if (e.keyCode === 32) {
@@ -142,7 +141,7 @@
         document.getElementById('mathmljs').setAttribute('bevelled',
                       bevelled ? 'true' : 'false');
         bevelled = !bevelled;
-        window.setTimeout(setbevelled, 500);
+        window.setTimeout(setbevelled, 2000);
       }
   </script>
   </head>
@@ -1013,17 +1012,78 @@ $ firefox output.html
     </div>
 
 
-    <!--
-    <div><br/><br/><br/>5) Future Projects...</div>
+    <div><br/><br/><br/>5) Work in Development<br/>
+      and Future Projects</div>
 
-    <div>Server-side Conversion<br/>
-      (Wikipedia)</div>
+    <div>MediaWiki Project
+    <ul>
+      <li>MathJax mode for anonymous users on Wikipedia.</li>
+      <li>Fast Server-side TeX-To-MathML Conversion.</li>
+      <li>Math Search Engine.</li>
+    </ul>
+    <img src="mathsearch.png" alt="Math Search"/>
+    </div>
 
-    <div>Search Engine<br/>
-      (Wikipedia)</div>
-    -->
+    <div>MathJax Project
+      <ul>
+        <li>Fall 2013: MathJax 2.3 with better font support.</li>
+        <li>MathJax extension with Math Accessibility Enhancements.</li>
+        <li>Setting Gecko's Native MathML as the default mode?</li>
+        <li>Improving WebKit's MathML support.</li>
+      </ul>
+    <img src="mathml-ipod.png" alt="MathML ipod"/>
+    </div>
 
-    <div id="warning"
+    <div>
+      Authoring tools
+      <ul>
+        <li>Fall 2013: New release of LaTeXML, with EPUB export and
+          better support for LaTeX graphic packages</li>
+        <li>January 2014: LibreOffice 4.2 with Improved MathML Export.</li>
+      </ul>
+      <img src="libreoffice-export.png" height="500"
+           alt="LibreOffice XHTML+MathML Export"/>
+    </div>
+
+    <div>Mozilla Project
+      <p style="text-align: left; text-indent: 1em;
+                color: #faa; font-size: 30px;">
+        Wish to get involved? Here are some ideas:
+      </p>
+
+      <ul>
+        <li>Complete Gecko's MathML support (bugs 534959 and 525772)</li>
+        <li>Fix issues that prevent Gecko's Native MathML
+          to be the default in MathJax (bug 687809)</li>
+        <li>Improve Font Installation (bugs 770005, 467729 and 648548)</li>
+        <li>Add support for more Open Type Math fonts (bug 407059)</li>
+        <li>Make the <code>editor/</code> aware of MathML (bug 78128)</li>
+        <li>Implement MathML Clipboard Specification (bug  539506)</li>
+      </ul>
+      <div>
+        <img src="mathzilla.svg" height="200" alt="mathzilla"/>
+      </div>
+    </div>
+
+    <div>
+      Thanks for Watching!
+      <ul>
+        <li>IRC channel: <code>#mathml</code></li>
+        <li>Mailing list: <code>dev-tech-mathml</code></li>
+        <li>MathML on MDN: <code>Web/MathML</code> and
+          <code>Mozilla/MathML_Project</code>.</li>
+        <li>Have questions? Contact
+          Fred Wang (<code>&lt;fred.wang.free.fr&gt;</code>) or Karl Tomlinson (<code>&lt;karlt@karlt.net&gt;</code>)
+</li>
+     </ul>
+      <div>
+        <img src="mathzilla.svg" height="400" alt="mathzilla"/>
+      </div>
+    </div>
+
+     <div></div>
+
+     <div id="warning"
        style="visibility: hidden; position: absolute; text-align:center;
               color: #faa;">
       <br/>
