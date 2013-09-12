@@ -1,0 +1,1044 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Mozilla MathML Project</title>
+    <meta charset="utf-8"/>
+    <style type="text/css">
+      body {
+      padding: 0; margin: 0;
+      background: grey;
+      overflow: hidden;
+      }
+
+      table, td {
+      border: 1px solid white;
+      border-collapse: collapse;
+      }
+
+      pre {
+        font-size: 35px;
+        text-align: left;
+      }
+
+      #slides {
+      background: #030;
+      width: 1024px;
+      height: 756px;
+      margin: auto; 
+      }
+
+      #slides div, #slides p {
+      font-family: Neo Euler;
+      font-size: 80px;
+      color: white;
+      width: 1024px;
+      text-align: center;
+      }
+
+      @font-face {
+      font-family: Neo Euler;
+      src: local('Neo-Euler'), local('Neo Euler'), url('euler.otf');
+      }
+
+      math.mathmlstyle mo { color: #faa;  }
+      math.mathmlstyle mfrac { text-shadow: black 10px 12px 1px; }
+
+      ul.history {
+      font-size: 30px;
+      text-align: left;
+      }
+      ul.history li {
+        margin-top: .2em;
+        margin-bottom: .2em;
+      }
+    </style>
+    
+    <script type="text/javascript">
+      var delta = 5;
+      var divs, n, nmax, running;
+
+      function init()
+      {
+        divs = document.getElementById('slides').children;
+        nmax = divs.length;
+        window.onkeydown = handleKeyEvent;
+        for (n = 0; n < nmax; n++) {
+          divs[n].style.visibility = "hidden";
+          divs[n].style.position = "absolute";
+        }
+
+        var ua = navigator.userAgent;
+        var isGecko = ua.indexOf("Gecko") > -1 && ua.indexOf("KHTML") === -1;
+        if (!isGecko) {
+          document.getElementById('warning').style.visibility = "visible";
+          return;
+        }
+
+        divs[nmax - 1].parentNode.removeChild(divs[nmax - 1]);
+        nmax--;
+        n = 0;
+
+        setbevelled();
+
+        running = false;
+        fullScreen = false;
+        nextSlide();
+      }
+
+      function ensureFullScreen() {
+        if (!document.fullscreenElement &&    // alternative standard method
+            !document.mozFullScreenElement && !document.webkitFullscreenElement) {  // current working methods
+          if (document.documentElement.requestFullscreen) {
+            document.documentElement.requestFullscreen();
+          } else if (document.documentElement.mozRequestFullScreen) {
+            document.documentElement.mozRequestFullScreen();
+          } else if (document.documentElement.webkitRequestFullscreen) {
+            document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+          }
+        }
+      }
+
+      function handleKeyEvent(e)
+      {
+        if (e.keyCode >= 32)
+          ensureFullScreen();
+
+        if (e.keyCode === 32) {
+          if (running) {
+            running = false;
+          } else {
+            running = true;
+            window.setTimeout(next, delta * 1000);
+          }
+        } else if (e.keyCode === 37) {
+          prevSlide();
+        } else if (e.keyCode === 39) {
+         nextSlide();
+        }
+      }
+      
+      function prevSlide()
+      {
+        divs[n].style.visibility = "hidden";
+        n = (n - 1 + nmax) % nmax;
+        divs[n].style.visibility = "visible";
+      }
+
+      function nextSlide()
+      {
+        divs[n].style.visibility = "hidden";
+        n = (n + 1) % nmax;
+        divs[n].style.visibility = "visible";
+      }
+
+      function next()
+      {
+        nextSlide();
+        if (running) window.setTimeout(next, delta * 1000);
+      }
+
+      var bevelled = false;
+
+      function setbevelled()
+      {
+        document.getElementById('mathmljs').setAttribute('bevelled',
+                      bevelled ? 'true' : 'false');
+        bevelled = !bevelled;
+        window.setTimeout(setbevelled, 500);
+      }
+  </script>
+  </head>
+  <body onload="init()" onclick="ensureFullScreen()">
+
+    <div id="slides">
+
+      <div>
+        <img src="mathzilla.svg" height="512" alt="mathzilla"/><br/>
+        Mozilla<br/>MathML Project      
+      </div>
+
+      <div>
+        <img src="mathzilla.svg" height="512" alt="mathzilla"/><br/>
+        A Mozilla Project for<br/>Math on the Web
+      </div>
+
+      <div>
+        1) History of the Project<br/>
+        <img src="mathzilla.svg" height="150" alt="mathzilla"/><br/>
+        <ul class="history">
+          <li style="color: #aaf">
+            1989-1990: Invention of the Web by researchers at CERN.
+          </li>
+          <li>January 1998: Announcement to open Netscape Source Code.</li>
+          <li style="color: #aaf">April 1998: MathML 1.0 Released.</li>
+        </ul>
+      </div>
+
+      <div>
+        1) History of the Project<br/>
+        <img src="mathzilla.svg" height="150" alt="mathzilla"/><br/>
+        <ul class="history">
+          <li style="color: #aaf">
+            1989-1990: Invention of the Web by researchers at CERN.
+          </li>
+          <li>January 1998: Announcement to open Netscape Source Code.</li>
+          <li style="color: #aaf">April 1998: MathML 1.0 Released.</li>
+          <li style="color: #faa">May 1999: Launch of the Project by Volunteer Contributors.</li>
+          <li style="color: #aaf">February 2001: MathML 2.0 Released.</li>
+          <li style="color: #faa">June 2002: Mozilla 1.0 Released with MathML support.</li>
+        </ul>
+      </div>
+
+      <div>
+        1) History of the Project<br/>
+        <img src="mathzilla.svg" height="150" alt="mathzilla"/><br/>
+        <ul class="history">
+          <li style="color: #aaf">
+            1989-1990: Invention of the Web by researchers at CERN.
+          </li>
+          <li>January 1998: Announcement to open Netscape Source Code.</li>
+          <li style="color: #aaf">April 1998: MathML 1.0 Released.</li>
+          <li style="color: #faa">May 1999: Launch of the Project by Volunteer Contributors.</li>
+          <li style="color: #aaf">February 2001: MathML 2.0 Released.</li>
+          <li style="color: #faa">June 2002: Mozilla 1.0 Released with MathML support.</li>
+          <li>July 2003: Creation of the Mozilla Foundation.</li>
+          <li>November 2004: Firefox 1.0 Released.</li>
+          <li>...</li>
+        </ul>
+      </div>
+
+      <div>
+        1) History of the Project<br/>
+        <img src="mathzilla.svg" height="150" alt="mathzilla"/><br/>
+        <ul class="history">
+          <li style="color: #aaf">
+            1989-1990: Invention of the Web by researchers at CERN.
+          </li>
+          <li>January 1998: Announcement to open Netscape Source Code.</li>
+          <li style="color: #aaf">April 1998: MathML 1.0 Released.</li>
+          <li style="color: #faa">May 1999: Launch of the Project by Volunteer Contributors.</li>
+          <li style="color: #aaf">February 2001: MathML 2.0 Released.</li>
+          <li style="color: #faa">June 2002: Mozilla 1.0 Released with MathML support.</li>
+          <li>July 2003: Creation of the Mozilla Foundation.</li>
+          <li>November 2004: Firefox 1.0 Released.</li>
+          <li>...</li>
+          <li style="color: #aaf">October 2010: MathML 3.0 Released.</li>
+          <li style="color: #faa">June 2013: Launch of Mozilla Science Lab.</li>
+        </ul>
+      </div>
+
+      <div>
+        <br/>
+        <br/>
+        <br/>
+        2) MathML is the markup<br/>
+        language used in HTML5<br/>
+        to write math...
+      </div>
+
+      <div>
+        <br/>MathML integrates<br/>well in HTML<br/>
+        <table style="width: 100%;">
+          <tr>
+            <td>PNG</td>
+            <td>blah <img src="ex21.png" width="180" alt="ex21"/> blah</td>
+          </tr>
+          <tr>
+            <td>MathML</td>
+            <td>blah
+              <math>
+                <mrow>
+                  <mfrac>
+                    <mrow>
+                      <mi>x</mi>
+                      <mo>+</mo>
+                      <msup>
+                        <mi>y</mi>
+                        <mn>2</mn>
+                      </msup>
+                    </mrow>
+                    <mrow>
+                      <mi>k</mi>
+
+                      <mo>+</mo>
+
+                      <mn>1</mn>
+                    </mrow>
+                  </mfrac>
+                </mrow>
+              </math> blah</td>
+          </tr>
+        </table>
+      </div>
+
+
+      <div>
+        <br/>MathML integrates<br/>well in HTML<br/>
+        <table style="width: 100%;">
+          <tr>
+            <td>PNG</td>
+            <td><img src="ex51.png" height="140" alt="ex51"/></td>
+          </tr>
+          <tr>
+            <td>MathML</td>
+            <td><math display="block" style="font-size: 60%;">
+                <mrow>
+                  <munder>
+                    <mo>&sum;</mo>
+                    <mrow>
+                      <mi>p</mi>
+                      <mtext>&nbsp;prime</mtext>
+                    </mrow>
+                  </munder>
+                  <mi>f</mi>
+                  <mo stretchy="false">(</mo>
+                  <mi>p</mi>
+                  <mo stretchy="false">)</mo>
+                  <mo>=</mo>
+
+                  <msub>
+                    <mo stretchy="false">&int;</mo>
+                    <mrow>
+                      <mi>t</mi>
+                      <mo>&gt;</mo>
+                      <mn>1</mn>
+                    </mrow>
+                  </msub>
+
+                  <mi>f</mi>
+                  <mo stretchy="false">(</mo>
+                  <mi>t</mi>
+                  <mo stretchy="false">)</mo>
+                  <mo mathvariant="italic">d</mo>
+                  <mi>&pi;</mi>
+                  <mo stretchy="false">(</mo>
+                  <mi>t</mi>
+                  <mo stretchy="false">)</mo>
+                </mrow>
+            </math></td>
+          </tr>
+        </table>
+      </div>
+
+      <div>
+        <br/>MathML integrates<br/>well in HTML<br/>
+        <table style="width: 100%;">
+          <tr>
+            <td>PNG</td>
+            <td><img src="ex54.png" height="160" alt="ex54"/></td>
+          </tr>
+          <tr>
+            <td>MathML</td>
+            <td>
+              <math display="block" style="font-size: 30%;">
+                <mrow>
+                  <mo>det</mo>
+                  <mo>|</mo>
+                  <mtable>
+                    <mtr>
+                      <mtd columnalign="center">
+                        <msub>
+                          <mi>c</mi>
+                          <mn>0</mn>
+                        </msub>
+                      </mtd>
+                      <mtd columnalign="center">
+                        <msub>
+                          <mi>c</mi>
+                          <mn>1</mn>
+                        </msub>
+                      </mtd>
+                      <mtd columnalign="center">
+                        <msub>
+                          <mi>c</mi>
+                          <mn>2</mn>
+                        </msub>
+                      </mtd>
+                      <mtd columnalign="center">
+                        <mo>&hellip;</mo>
+                      </mtd>
+                      <mtd columnalign="center">
+                        <msub>
+                          <mi>c</mi>
+                          <mi>n</mi>
+                        </msub>
+                      </mtd>
+                    </mtr>
+                    <mtr>
+                      <mtd columnalign="center">
+                        <msub>
+                          <mi>c</mi>
+                          <mn>1</mn>
+                        </msub>
+                      </mtd>
+                      <mtd columnalign="center">
+                        <msub>
+                          <mi>c</mi>
+                          <mn>2</mn>
+                        </msub>
+                      </mtd>
+                      <mtd columnalign="center">
+                        <msub>
+                          <mi>c</mi>
+                          <mn>3</mn>
+                        </msub>
+                      </mtd>
+                      <mtd columnalign="center">
+                        <mo>&hellip;</mo>
+                      </mtd>
+                      <mtd columnalign="center">
+                        <msub>
+                          <mi>c</mi>
+                          <mrow>
+                            <mi>n</mi>
+                            <mo>+</mo>
+                            <mn>1</mn>
+                          </mrow>
+                        </msub>
+                      </mtd>
+                    </mtr>
+                    <mtr>
+                      <mtd columnalign="center">
+                        <msub>
+                          <mi>c</mi>
+                          <mn>2</mn>
+                        </msub>
+                      </mtd>
+                      <mtd columnalign="center">
+                        <msub>
+                          <mi>c</mi>
+                          <mn>3</mn>
+                        </msub>
+                      </mtd>
+                      <mtd columnalign="center">
+                        <msub>
+                          <mi>c</mi>
+
+                          <mn>4</mn>
+
+                        </msub>
+                      </mtd>
+                      <mtd columnalign="center">
+                        <mo>&hellip;</mo>
+                      </mtd>
+                      <mtd columnalign="center">
+                        <msub>
+                          <mi>c</mi>
+                          <mrow>
+                            <mi>n</mi>
+                            <mo>+</mo>
+                            <mn>2</mn>
+                          </mrow>
+                        </msub>
+                      </mtd>
+                    </mtr>
+                    <mtr>
+                      <mtd columnalign="center">
+                        <mo>&vellip;</mo>
+                      </mtd>
+                      <mtd columnalign="center">
+                        <mo>&vellip;</mo>
+                      </mtd>
+                      <mtd columnalign="center">
+                        <mo>&vellip;</mo>
+                      </mtd>
+                      <mtd columnalign="center"></mtd>
+                      <mtd columnalign="center">
+                        <mo>&vellip;</mo>
+                      </mtd>
+                    </mtr>
+                    <mtr>
+                      <mtd columnalign="center">
+                        <msub>
+                          <mi>c</mi>
+                          <mi>n</mi>
+                        </msub>
+                      </mtd>
+                      <mtd columnalign="center">
+                        <msub>
+                          <mi>c</mi>
+                          <mrow>
+                            <mi>n</mi>
+                            <mo>+</mo>
+                            <mn>1</mn>
+                          </mrow>
+                        </msub>
+                      </mtd>
+                      <mtd columnalign="center">
+                        <msub>
+                          <mi>c</mi>
+                          <mrow>
+                            <mi>n</mi>
+                            <mo>+</mo>
+                            <mn>2</mn>
+                          </mrow>
+                        </msub>
+                      </mtd>
+                      <mtd columnalign="center">
+                        <mo>&hellip;</mo>
+                      </mtd>
+                      <mtd columnalign="center">
+                        <msub>
+                          <mi>c</mi>
+                          <mrow>
+                            <mn>2</mn>
+                            <mi>n</mi>
+                          </mrow>
+                        </msub>
+                      </mtd>
+                    </mtr>
+                  </mtable>
+                  <mo>|</mo>
+                  <mo>&gt;</mo>
+                  <mn>0</mn>
+                </mrow>
+              </math>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <div>
+        <div>
+          This is actually an<br/> SVG image...<br/>
+          <img src="mathzilla.svg" height="64" alt="mathzilla"/><br/>
+          <img src="mathzilla.svg" height="128" alt="mathzilla"/><br/>
+          <img src="mathzilla.svg" height="256" alt="mathzilla"/><br/>
+        </div>
+      </div>
+
+      <div>
+        <div>
+          ...with a MathML<br/> equation inside!<br/>
+          <img src="mathmltree-1.png" alt="mathml tree"/><br/>
+          <img src="mathmltree-2.png" alt="mathml tree"/>
+          <img src="mathmltree-3.png" alt="mathml tree"/><br/>
+        </div>
+      </div>
+
+      <div>
+        <br/>MathML can be styled<br/> with CSS
+<pre>
+  mo { color: #faa;  }
+  mfrac { text-shadow: black 10px 12px 1px; }
+</pre>
+
+        <math xmlns="http://www.w3.org/1998/Math/MathML" class="mathmlstyle">
+          <mstyle displaystyle="true">
+            <mi mathvariant="normal">&#x0393;<!-- Γ --></mi>
+            <mo stretchy="false">(</mo>
+            <mi>z</mi>
+            <mo stretchy="false">)</mo>
+            <mo>=</mo>
+            <msubsup>
+              <mo>&#x222B;<!-- ∫ --></mo>
+              <mn>0</mn>
+              <mi mathvariant="normal">&#x221E;<!-- ∞ --></mi>
+            </msubsup>
+            <msup>
+              <mi>t</mi>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi>z</mi>
+              </mrow>
+            </msup>
+            <msup>
+              <mi>e</mi>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mo>&#x2212;<!-- − --></mo>
+                <mi>t</mi>
+              </mrow>
+            </msup>
+            <mspace width="thinmathspace" />
+            <mfrac>
+              <mrow>
+                <mrow class="MJX-TeXAtom-ORD">
+                  <mi mathvariant="normal">d</mi>
+                </mrow>
+                <mi mathvariant="normal">t</mi>
+              </mrow>
+              <mi>t</mi>
+            </mfrac>
+          </mstyle>
+        </math>
+      </div>
+
+
+      <div><br/>MathML DOM can be<br/>modified via JavaScript<br/>
+        
+<pre>
+  mfrac.setAttribute('bevelled', ...);
+</pre>
+
+        <math display="block" style="font-size: 100px; color: #afa;">
+          <mfrac id="mathmljs" bevelled="true">
+            <msqrt><mn>2</mn></msqrt>
+            <mi>&pi;</mi>
+          </mfrac>
+        </math>
+      </div>
+
+
+      <div><br/>MathML is compatible<br/>
+        with Unicode &amp; Bidi<br/><br/>
+
+        <math display="block" dir="rtl" style="font-size: 30px; color: #aaf;">
+          <mstyle mathvariant="bold">
+            <mi>ص</mi>
+            <mo>=</mo>
+            <mroot>
+              <mrow>
+                <mo>-</mo>
+                <mfrac>
+                  <mi>م</mi>
+                  <mn>٢</mn>
+                </mfrac>
+                <mo>+</mo>
+                <mroot>
+                  <mrow>
+                    <mfrac>
+                      <msup>
+                        <mi>م</mi>
+                        <mn>٢</mn>
+                      </msup>
+                      <mn>٤</mn>
+                    </mfrac>
+                    <mo>+</mo>
+                    <mfrac>
+                      <msup>
+                        <mi>هـ</mi>
+                        <mn>٣</mn>
+                      </msup>
+                      <mn>٢٧</mn>
+                    </mfrac>
+                  </mrow>
+                  <mn>٢</mn>
+                </mroot>
+              </mrow>
+              <mn>٣</mn>
+            </mroot>
+
+            <mo>+</mo>
+
+            <mroot>
+              <mrow>
+                <mo>-</mo>
+                <mfrac>
+                  <mi>م</mi>
+                  <mn>٢</mn>
+                </mfrac>
+                <mo>-</mo>
+                <mroot>
+                  <mrow>
+                    <mfrac>
+                      <msup>
+                        <mi>م</mi>
+                        <mn>٢</mn>
+                      </msup>
+                      <mn>٤</mn>
+                    </mfrac>
+                    <mo>+</mo>
+                    <mfrac>
+                      <msup>
+                        <mi>هـ</mi>
+                        <mn>٣</mn>
+                      </msup>
+                      <mn>٢٧</mn>
+                    </mfrac>
+                  </mrow>
+                  <mn>٢</mn>
+                </mroot>
+              </mrow>
+              <mn>٣</mn>
+            </mroot>
+            <mo>.</mo>
+          </mstyle>
+        </math>
+
+        <math display="block" dir="rtl" style="font-size: 30px; color: #afa;">
+          <mrow>
+            <mo>{</mo>
+            <mtable>
+              <mtr>
+                <mtd>
+                  <mrow>
+                    <msub>
+                      <mi>ق</mi>
+                      <mi>ل</mi>
+                    </msub>
+                    <mo>+</mo>
+                    <msub>
+                      <mrow>
+                        <mi>د</mi>
+                        <mo>(</mo>
+                        <mi>ق</mi>
+                        <mo>)</mo>
+                      </mrow>
+                      <mi>س</mi>
+                    </msub>
+                    <mo>=</mo>
+                    <mn>٠</mn>
+                  </mrow>
+                </mtd>
+              </mtr>
+              <mtr>
+                <mtd>
+                  <mrow>
+                    <mi>ق</mi>
+                    <mo stretchy="false">(</mo>
+                    <mn>٠</mn>
+                    <mo>،</mo>
+                    <mi>س</mi>
+                    <mo stretchy="false">)</mo>
+                    <mo>=</mo>
+                    <mrow>
+                      <mo>{</mo>
+                      <mtable>
+                        <mtr>
+                          <mtd>
+                            <mrow>
+                              <msup>
+
+                                <mi>ق</mi>
+
+                                <mo>-</mo>
+                              </msup>
+                            </mrow>
+                          </mtd>
+                          <mtd>
+                            <mrow>
+                              <mtext>اذا كان&nbsp;</mtext>
+                              <mi>س</mi>
+                              <mo>&lt;</mo>
+                              <mn>٠</mn>
+                            </mrow>
+                          </mtd>
+                        </mtr>
+                        <mtr>
+                          <mtd>
+                            <mrow>
+                              <msup>
+                                <mi>ق</mi>
+                                <mo>+</mo>
+                              </msup>
+                            </mrow>
+                          </mtd>
+                          <mtd>
+                            <mrow>
+                              <mtext>اذا كان&nbsp;</mtext>
+                              <mi>س</mi>
+                              <mo>&gt;</mo>
+                              <mn>٠</mn>
+                            </mrow>
+                          </mtd>
+                        </mtr>
+                      </mtable>
+                    </mrow>
+                  </mrow>
+                </mtd>
+              </mtr>
+            </mtable>
+          </mrow>
+        </math>
+
+        <math display="block" dir="rtl" style="font-size: 30px; color: #faa;">
+          <mrow>
+            <mi>&pi;</mi>
+            <mo stretchy="false">(</mo>
+            <mi>ن</mi>
+            <mo stretchy="false">)</mo>
+            <mo>=</mo>
+            <munderover>
+              <mo>&sum;</mo>
+              <mrow>
+                <mi>م</mi>
+                <mo>=</mo>
+                <mn>٢</mn>
+              </mrow>
+              <mi>ن</mi>
+            </munderover>
+            <mrow>
+              <mo>&lfloor;</mo>
+              <msup>
+                <mrow>
+
+                  <mo>(</mo>
+
+                  <mrow>
+                    <munderover>
+                      <mo>&sum;</mo>
+                      <mrow>
+                        <mi>ك</mi>
+                        <mo>=</mo>
+                        <mn>١</mn>
+                      </mrow>
+                      <mrow>
+                        <mi>م</mi>
+                        <mo>-</mo>
+                        <mn>١</mn>
+                      </mrow>
+                    </munderover>
+                    <mrow>
+                      <mo minsize="1.5">&lfloor;</mo>
+                      <mo>(</mo>
+                      <mi>م</mi>
+                      <mo>∕</mo>
+                      <mi>ك</mi>
+                      <mo>)</mo>
+                      <mo minsize="2">∕</mo>
+                      <mo>&lceil;</mo>
+                      <mi>م</mi>
+                      <mo>∕</mo>
+                      <mi>ك</mi>
+                      <mo>&rceil;</mo>
+                      <mo minsize="1.5">&rfloor;</mo>
+                    </mrow>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+                <mrow>
+                  <mo>-</mo>
+                  <mn>١</mn>
+                </mrow>
+              </msup>
+              <mo>&rfloor;</mo>
+            </mrow>
+          </mrow>
+        </math>
+      </div>
+
+      <div>
+        <br/>
+        <br/>
+        <br/>
+        3) MathML is available<br/>
+        in any Gecko-based<br/>
+        applications...
+      </div>
+
+      <div>MathML in Firefox<br/>
+        (MDN wiki)<br/>
+        <img src="mathml-mdn.png" width="1000" alt="MDN"/>
+      </div>
+
+      <div>MathML in Firefox<br/>
+        (Jacques Distler's blog)
+        <img src="mathml-blog.png" width="1000" alt="Blog"/>
+      </div>
+
+      <div>MathML in Firefox<br/>
+        (MathJax NativeMML)
+        <img src="mathml-wikipedia.png" width="1000" alt="Wikipedia"/>
+      </div>
+
+      <div>MathML in Firefox<br/>
+        (Firemath add-on)
+        <img src="firemath.jpg" width="900" alt="Firemath"/>
+      </div>
+
+      <div>MathML in Firefox<br/>
+        (EPUBReader add-on)<br/>
+        <img src="mathml-ebooks.png" width="1000" alt="EPUBReader"/>
+      </div>
+
+      <div>MathML in Thunderbird<br/>
+        <img src="mathml-thunderbird.png" alt="Thunderbird"/>
+      </div>
+
+
+      <div><br/><br/>MathML in InstantBird<br/>
+        <img src="mathml-instantbird.png" alt="InstantBird"/>
+      </div>
+
+      <div><br/>MathML in BlueGriffon<br/>
+        <img src="mathml-bluegriffon.png" alt="BlueGriffon"/>
+      </div>
+
+
+      <div>4) There are many ways<br/>to write MathML...<br/>
+        <img src="mathml-mdn.png" width="400" alt="MDN"/>
+        <img src="firemath.jpg" width="400" alt="Firemath"/><br/>
+        <img src="mathbird.png" width="400" alt="MathBird"/>
+        <img src="mathml-bluegriffon.png" width="400" alt="BlueGriffon"/>
+      </div>
+
+      <div>Client-side conversion<br/>
+        (ASCIIMathML)
+
+<pre>
+  ...
+  &lt;script src="ASCIIMathML.js" ...&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  `a/b + c^2 = sqrt t - 4 v_0`
+  ...
+</pre>
+
+        <math>
+          <mstyle mathcolor="#aaf" displaystyle="true">
+            <mfrac>
+              <mi>a</mi>
+              <mi>b</mi>
+            </mfrac>
+            <mo>+</mo>
+            <msup>
+              <mi>c</mi>
+              <mn>2</mn>
+            </msup>
+            <mo>=</mo>
+
+            <msqrt>
+              <mi>t</mi>
+            </msqrt>
+
+            <mo>-</mo>
+            <mn>4</mn>
+            <msub>
+              <mi>v</mi>
+              <mn>0</mn>
+            </msub>
+          </mstyle>
+        </math>
+      </div>
+
+      <div>Client-side conversion<br/>
+        (MathJax)
+
+<pre style="font-size: 20pt;">
+  &lt;script type="text/x-mathjax-config"&gt;
+    MathJax.Hub.Config({
+      MMLorHTML: { prefer: { Firefox: "MML" } }
+    });
+  &lt;/script&gt;
+  &lt;script src="MathJax.js?config=TeX-AMS-MML_HTMLorMML.js"...&gt;
+  ...
+  \[ \sum_{i=0}^{n-1} e^{i \pi n} = 0 \]
+</pre>
+
+        <math style="color: #afa"
+              xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <mstyle>
+            <mrow class="MJX-TeXAtom-ORD">
+              <munderover>
+                <mo>&#x2211;<!-- ∑ --></mo>
+                <mrow class="MJX-TeXAtom-ORD">
+                  <mi>i</mi>
+                  <mo>=</mo>
+                  <mn>0</mn>
+                </mrow>
+                <mrow class="MJX-TeXAtom-ORD">
+                  <mi>n</mi>
+                  <mo>&#x2212;<!-- − --></mo>
+                  <mn>1</mn>
+                </mrow>
+              </munderover>
+              <msup>
+                <mi>e</mi>
+                <mrow class="MJX-TeXAtom-ORD">
+                  <mi>i</mi>
+                  <mi>&#x03C0;<!-- π --></mi>
+                  <mi>n</mi>
+                </mrow>
+              </msup>
+              <mo>=</mo>
+              <mn>0</mn>
+            </mrow>
+          </mstyle>
+        </math>
+      </div>
+
+    <div>Command line tools
+      (itex2MML)
+
+<pre>
+input.html
+
+  &lt;body&gt;
+    &lt;p style="color: #faa"&gt;$\sqrt{a^2-3c}$&lt;/p&gt;
+  &lt;/body&gt;
+
+$ cat input.html | itex2MML > output.html
+$ firefox output.html
+</pre>
+
+<p style="color: #faa"><math xmlns='http://www.w3.org/1998/Math/MathML' display='inline'><msqrt><mrow><msup><mi>a</mi> <mn>2</mn></msup><mo>&minus;</mo><mn>3</mn><mi>c</mi></mrow></msqrt></math></p>
+
+</div>
+
+
+    <div>Command line tools
+      (LaTeXML)
+<div style="font-size: 30px; text-align: left; margin-left: 30px;">
+  Pick a random LaTeX document from arXiv...<br/>
+      <img src="boris-arxiv.png" alt="arXiv"/><br/>
+  ... and convert it into HTML5!
+<pre style="font-size: 30px; margin-top: 0;">
+ $ latexml --dest thesis.xml thesis.tex
+ $ latexmlpost --dest html/thesis.html --format=html5 \
+               --splitat=section thesis.xml
+</pre>
+</div>
+</div>
+
+    <div>
+<pre style="font-size: 30px; margin-top: 0;">
+  $ firefox thesis.html
+</pre>
+      <img src="boris-latexml.png" alt="LaTeXML output"/>
+    </div>
+
+    <div>WYSIWYG editor
+      (LibreOffice)
+      <div style="font-size: 30px; margin-left: 30px;">
+        Tools → Options → Advanced → Experimental Features<br/>
+        to enable the visual equation editor...<br/>
+        <img src="libreoffice-visualeditor.png" alt="LibreOffice Equation Editor"/>
+      </div>
+    </div>
+
+    <div>WYSIWYG editor
+      (LibreOffice)
+      <div style="font-size: 30px; margin-left: 30px;">
+        Export your document into XHTML+MathML...<br/>
+        <img src="libreoffice-export.png" alt="LibreOffice XHTML+MathML Export"/>
+      </div>
+    </div>
+
+    <div>WYSIWYG editor
+      (LibreOffice)
+      <div style="font-size: 30px; margin-left: 30px;">
+        ... and view it in Firefox!<br/>
+        <img src="libreoffice-output.png" alt="LibreOffice Output"/>
+      </div>
+    </div>
+
+    <div>Handwriting Recognition
+      (MyScript Web Equation)
+      <img src="handwriting.png" alt="Handwriting Recognition"/>
+    </div>
+
+
+    <!--
+    <div><br/><br/><br/>5) Future Projects...</div>
+
+    <div>Server-side Conversion<br/>
+      (Wikipedia)</div>
+
+    <div>Search Engine<br/>
+      (Wikipedia)</div>
+    -->
+
+    <div id="warning"
+       style="visibility: hidden; position: absolute; text-align:center;
+              color: #faa;">
+      <br/>
+      <br/>
+      This page contains<br/>
+      advanced MathML<br/>
+      features. Please use<br/>
+      a Gecko browser :-(
+    </div>
+
+    </div>
+
+  </body>
+</html>
