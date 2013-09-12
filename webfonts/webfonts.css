@@ -1,0 +1,96 @@
+@font-face {
+  font-family: 'Neo Euler';
+  src: local('Neo-Euler-Regular'), local('Neo Euler Regular'), url('euler.woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Amiri';
+  src: local('Amiri-Regular'), local('Amiri Regular'), url('amiri-regular.woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Amiri';
+  src: local('Amiri-Italic'), local('Amiri Italic'), url('amiri-slanted.woff');
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'MathJax_AMS';
+  src: local('MathJax_AMS-Regular'), local('MathJax_AMS Regular'), url('MathJax_AMS-Regular.woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'MathJax_Caligraphic';
+  src: local('MathJax_Caligraphic-Regular'), local('MathJax_Caligraphic Regular'), url('MathJax_Caligraphic-Regular.woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'MathJax_Fraktur';
+  src: local('MathJax_Fraktur-Regular'), local('MathJax_Fraktur Regular'), url('MathJax_Fraktur-Regular.woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'MathJax_Main';
+  src: local('MathJax_Main-Regular'), local('MathJax_Main Regular'), url('MathJax_Main-Regular.woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'MathJax_Script';
+  src: local('MathJax_Script-Regular'), local('MathJax_Script Regular'), url('MathJax_Script-Regular.woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'MathJax_Size1';
+  src: local('MathJax_Size1-Regular'), local('MathJax_Size1 Regular'), url('MathJax_Size1-Regular.woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'MathJax_Size2';
+  src: local('MathJax_Size2-Regular'), local('MathJax_Size2 Regular'), url('MathJax_Size2-Regular.woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'MathJax_Size3';
+  src: local('MathJax_Size3-Regular'), local('MathJax_Size3 Regular'), url('MathJax_Size3-Regular.woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'MathJax_Size4';
+  src: local('MathJax_Size4-Regular'), local('MathJax_Size4 Regular'), url('MathJax_Size4-Regular.woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'MathJax_Caligraphic';
+  src: local('MathJax_Caligraphic-Bold'), local('MathJax_Caligraphic Bold'), url('MathJax_Caligraphic-Bold.woff');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'MathJax_Fraktur';
+  src: local('MathJax_Fraktur-Bold'), local('MathJax_Fraktur Bold'), url('MathJax_Fraktur-Bold.woff');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'MathJax_Main';
+  src: local('MathJax_Main-Bold'), local('MathJax_Main Bold'), url('MathJax_Main-Bold.woff');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'MathJax_Main';
+  src: local('MathJax_Main-Italic'), local('MathJax_Main Italic'), url('MathJax_Main-Italic.woff');
+  font-weight: normal;
+  font-style: italic;
+}

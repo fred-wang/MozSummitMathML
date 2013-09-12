@@ -3,6 +3,7 @@
   <head>
     <title>Mozilla MathML Project</title>
     <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="webfonts/webfonts.css"/>
     <style type="text/css">
       body {
       padding: 0; margin: 0;
@@ -28,20 +29,16 @@
       }
 
       #slides div, #slides p {
-      font-family: Neo Euler;
+      font-family: 'Neo Euler';
       font-size: 80px;
       color: white;
       width: 1024px;
       text-align: center;
       }
 
-      @font-face {
-      font-family: Neo Euler;
-      src: local('Neo-Euler'), local('Neo Euler'), url('euler.otf');
-      }
-
       math.mathmlstyle mo { color: #faa;  }
       math.mathmlstyle mfrac { text-shadow: black 10px 12px 1px; }
+      math.arabic { font-size: 30px; color: #faa; font-family: Amiri; }
 
       ul.history {
       font-size: 30px;
@@ -578,83 +575,81 @@
       </div>
 
 
-      <div><br/>MathML is compatible<br/>
+      <div>MathML is compatible<br/>
         with Unicode &amp; Bidi<br/><br/>
 
-        <math display="block" dir="rtl" style="font-size: 30px; color: #aaf;">
-          <mstyle mathvariant="bold">
-            <mi>ص</mi>
-            <mo>=</mo>
-            <mroot>
-              <mrow>
-                <mo>-</mo>
-                <mfrac>
-                  <mi>م</mi>
-                  <mn>٢</mn>
-                </mfrac>
-                <mo>+</mo>
-                <mroot>
-                  <mrow>
-                    <mfrac>
-                      <msup>
-                        <mi>م</mi>
-                        <mn>٢</mn>
-                      </msup>
-                      <mn>٤</mn>
-                    </mfrac>
-                    <mo>+</mo>
-                    <mfrac>
-                      <msup>
-                        <mi>هـ</mi>
-                        <mn>٣</mn>
-                      </msup>
-                      <mn>٢٧</mn>
-                    </mfrac>
-                  </mrow>
-                  <mn>٢</mn>
-                </mroot>
-              </mrow>
-              <mn>٣</mn>
-            </mroot>
+        <math display="block" dir="rtl" class="arabic">
+          <mi>ص</mi>
+          <mo>=</mo>
+          <mroot>
+            <mrow>
+              <mo>-</mo>
+              <mfrac>
+                <mi>م</mi>
+                <mn>٢</mn>
+              </mfrac>
+              <mo>+</mo>
+              <mroot>
+                <mrow>
+                  <mfrac>
+                    <msup>
+                      <mi>م</mi>
+                      <mn>٢</mn>
+                    </msup>
+                    <mn>٤</mn>
+                  </mfrac>
+                  <mo>+</mo>
+                  <mfrac>
+                    <msup>
+                      <mi>هـ</mi>
+                      <mn>٣</mn>
+                    </msup>
+                    <mn>٢٧</mn>
+                  </mfrac>
+                </mrow>
+                <mn>٢</mn>
+              </mroot>
+            </mrow>
+            <mn>٣</mn>
+          </mroot>
 
-            <mo>+</mo>
+          <mo>+</mo>
 
-            <mroot>
-              <mrow>
-                <mo>-</mo>
-                <mfrac>
-                  <mi>م</mi>
-                  <mn>٢</mn>
-                </mfrac>
-                <mo>-</mo>
-                <mroot>
-                  <mrow>
-                    <mfrac>
-                      <msup>
-                        <mi>م</mi>
-                        <mn>٢</mn>
-                      </msup>
-                      <mn>٤</mn>
-                    </mfrac>
-                    <mo>+</mo>
-                    <mfrac>
-                      <msup>
-                        <mi>هـ</mi>
-                        <mn>٣</mn>
-                      </msup>
-                      <mn>٢٧</mn>
-                    </mfrac>
-                  </mrow>
-                  <mn>٢</mn>
-                </mroot>
-              </mrow>
-              <mn>٣</mn>
-            </mroot>
-            <mo>.</mo>
-          </mstyle>
+          <mroot>
+            <mrow>
+              <mo>-</mo>
+              <mfrac>
+                <mi>م</mi>
+                <mn>٢</mn>
+              </mfrac>
+              <mo>-</mo>
+              <mroot>
+                <mrow>
+                  <mfrac>
+                    <msup>
+                      <mi>م</mi>
+                      <mn>٢</mn>
+                    </msup>
+                    <mn>٤</mn>
+                  </mfrac>
+                  <mo>+</mo>
+                  <mfrac>
+                    <msup>
+                      <mi>هـ</mi>
+                      <mn>٣</mn>
+                    </msup>
+                    <mn>٢٧</mn>
+                  </mfrac>
+                </mrow>
+                <mn>٢</mn>
+              </mroot>
+            </mrow>
+            <mn>٣</mn>
+          </mroot>
+          <mo>.</mo>
         </math>
 
-        <math display="block" dir="rtl" style="font-size: 30px; color: #afa;">
+        <math display="block" dir="rtl" class="arabic">
           <mrow>
             <mo>{</mo>
             <mtable>
@@ -740,7 +735,7 @@
           </mrow>
         </math>
 
-        <math display="block" dir="rtl" style="font-size: 30px; color: #faa;">
+        <math display="block" dir="rtl" class="arabic">
           <mrow>
             <mi>&pi;</mi>
             <mo stretchy="false">(</mo>
