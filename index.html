@@ -38,7 +38,7 @@
 
       mi, mtext, mn { font-family: 'Neo Euler', 'Amiri'; }
       math.mathmlstyle mo { color: #faa;  }
-      math.mathmlstyle mfrac { text-shadow: black 10px 12px 1px; }
+      math.mathmlstyle mfrac { text-shadow: #aaf 10px 12px 1px; }
       math.arabic { font-size: 30px; }
 
       ul {
@@ -52,7 +52,7 @@
     </style>
     
     <script type="text/javascript">
-      var delta = 5;
+      var delta = 6;
       var divs, n, nmax, running;
 
       function init()
@@ -517,7 +517,7 @@
         <br/>MathML can be styled<br/> with CSS
 <pre>
   mo { color: #faa;  }
-  mfrac { text-shadow: black 10px 12px 1px; }
+  mfrac { text-shadow: #aaf 10px 12px 1px; }
 </pre>
 
         <math xmlns="http://www.w3.org/1998/Math/MathML" class="mathmlstyle">
@@ -566,7 +566,7 @@
   mfrac.setAttribute('bevelled', ...);
 </pre>
 
-        <math display="block" style="font-size: 100px; color: #afa;">
+        <math display="block" style="font-size: 100px; color: #ffa;">
           <mfrac id="mathmljs" bevelled="true">
             <msqrt><mn>2</mn></msqrt>
             <mi>&pi;</mi>
@@ -963,9 +963,9 @@ $ firefox output.html
     <div>Command line tools
       (LaTeXML)
 <div style="font-size: 30px; text-align: left; margin-left: 30px;">
-  Pick a random LaTeX document from arXiv...<br/>
-      <img src="boris-arxiv.png" alt="arXiv"/><br/>
-  ... and convert it into HTML5!
+  <span style="color: #faa;">
+    Convert a random LaTeX paper into a Web page!</span><br/><br/>
+      <img src="boris-arxiv.png" alt="arXiv"/>
 <pre style="font-size: 30px; margin-top: 0;">
  $ latexml --dest thesis.xml thesis.tex
  $ latexmlpost --dest html/thesis.html --format=html5 \
@@ -984,8 +984,8 @@ $ firefox output.html
     <div>WYSIWYG editor
       (LibreOffice)
       <div style="font-size: 30px; margin-left: 30px;">
-        Tools → Options → Advanced → Experimental Features<br/>
-        to enable the visual equation editor...<br/>
+        <span style="color: #faa;">Tools → Options → Advanced → Experimental Features</span><br/>
+        <span style="color: #afa;">to enable the visual equation editor...</span><br/>
         <img src="libreoffice-visualeditor.png" alt="LibreOffice Equation Editor"/>
       </div>
     </div>
@@ -993,7 +993,7 @@ $ firefox output.html
     <div>WYSIWYG editor
       (LibreOffice)
       <div style="font-size: 30px; margin-left: 30px;">
-        Export your document into XHTML+MathML...<br/>
+        <span style="color: #ffa;">Export your document into XHTML+MathML...</span><br/>
         <img src="libreoffice-export.png" alt="LibreOffice XHTML+MathML Export"/>
       </div>
     </div>
@@ -1001,7 +1001,7 @@ $ firefox output.html
     <div>WYSIWYG editor
       (LibreOffice)
       <div style="font-size: 30px; margin-left: 30px;">
-        ... and view it in Firefox!<br/>
+        <span style="color: #ffa;">... and view it in Firefox!</span><br/>
         <img src="libreoffice-output.png" alt="LibreOffice Output"/>
       </div>
     </div>
@@ -1017,19 +1017,19 @@ $ firefox output.html
 
     <div>MediaWiki Project
     <ul>
-      <li>MathJax mode for anonymous users on Wikipedia.</li>
-      <li>Fast Server-side TeX-To-MathML Conversion.</li>
-      <li>Math Search Engine.</li>
+      <li style="color: #faa;">MathJax mode for anonymous users on Wikipedia.</li>
+      <li style="color: #afa;">Fast Server-side TeX-To-MathML Conversion.</li>
+      <li style="color: #ffa;">Math Search Engine.</li>
     </ul>
     <img src="mathsearch.png" alt="Math Search"/>
     </div>
 
     <div>MathJax Project
       <ul>
-        <li>Fall 2013: MathJax 2.3 with better font support.</li>
-        <li>MathJax extension with Math Accessibility Enhancements.</li>
-        <li>Setting Gecko's Native MathML as the default mode?</li>
-        <li>Improving WebKit's MathML support.</li>
+        <li style="color: #afa;">Fall 2013: MathJax 2.3 with better font support.</li>
+        <li style="color: #ffa;">MathJax extension with Math Accessibility Enhancements.</li>
+        <li style="color: #faa;">Setting Gecko's Native MathML as the default mode?</li>
+        <li style="color: #aaf;">Improving WebKit's MathML support.</li>
       </ul>
     <img src="mathml-ipod.png" alt="MathML ipod"/>
     </div>
@@ -1037,9 +1037,9 @@ $ firefox output.html
     <div>
       Authoring tools
       <ul>
-        <li>Fall 2013: New release of LaTeXML, with EPUB export and
+        <li style="color: #faa;">Fall 2013: New release of LaTeXML, with EPUB export and
           better support for LaTeX graphic packages</li>
-        <li>January 2014: LibreOffice 4.2 with Improved MathML Export.</li>
+        <li style="color: #aaf;">January 2014: LibreOffice 4.2 with Improved MathML Export.</li>
       </ul>
       <img src="libreoffice-export.png" height="500"
            alt="LibreOffice XHTML+MathML Export"/>
@@ -1047,20 +1047,73 @@ $ firefox output.html
 
     <div>Mozilla Project
       <p style="text-align: left; text-indent: 1em;
-                color: #faa; font-size: 30px;">
+                font-size: 30px;">
         Wish to get involved? Here are some ideas:
       </p>
 
       <ul>
-        <li>Complete Gecko's MathML support (bugs 534959 and 525772)</li>
-        <li>Fix issues that prevent Gecko's Native MathML
-          to be the default in MathJax (bug 687809)</li>
-        <li>Improve Font Installation (bugs 770005, 467729 and 648548)</li>
-        <li>Add support for more Open Type Math fonts (bug 407059)</li>
-        <li>Make the <code>editor/</code> aware of MathML (bug 78128)</li>
-        <li>Implement MathML Clipboard Specification (bug  539506)</li>
+        <li style="color: #faa">Complete Gecko's MathML support (bugs 534959 and 525772)</li>
+        <li style="color: #faa">Fix issues that prevent Gecko's Native MathML
+          from being the default in MathJax (bug 687809)</li>
       </ul>
       <div>
+      </div>
+    </div>
+
+    <div>Mozilla Project
+      <p style="text-align: left; text-indent: 1em;
+                font-size: 30px;">
+        Wish to get involved? Here are some ideas:
+      </p>
+
+      <ul>
+        <li style="color: #faa">Complete Gecko's MathML support (bugs 534959 and 525772)</li>
+        <li style="color: #faa">Fix issues that prevent Gecko's Native MathML
+          to be the default in MathJax (bug 687809)</li>
+        <li style="color: #afa">Improve Font Installation (bugs 770005, 467729 and 648548)</li>
+        <li style="color: #afa">Add support for more Open Type Math fonts (bug 407059)</li>
+      </ul>
+      <div>
+      </div>
+    </div>
+
+    <div>Mozilla Project
+      <p style="text-align: left; text-indent: 1em;
+                font-size: 30px;">
+        Wish to get involved? Here are some ideas:
+      </p>
+
+      <ul>
+        <li style="color: #faa">Complete Gecko's MathML support (bugs 534959 and 525772)</li>
+        <li style="color: #faa">Fix issues that prevent Gecko's Native MathML
+          to be the default in MathJax (bug 687809)</li>
+        <li style="color: #afa">Improve Font Installation (bugs 770005, 467729 and 648548)</li>
+        <li style="color: #afa">Add support for more Open Type Math fonts (bug 407059)</li>
+        <li style="color: #aaf">Make the <code>editor/</code> aware of MathML (bug 78128)</li>
+        <li style="color: #aaf">Implement MathML Clipboard Specification (bug  539506)</li>
+      </ul>
+    </div>
+
+    <div>Mozilla Project
+      <p style="text-align: left; text-indent: 1em;
+                font-size: 30px;">
+        Wish to get involved? Here are some ideas:
+      </p>
+
+      <ul>
+        <li style="color: #faa">Complete Gecko's MathML support (bugs 534959 and 525772)</li>
+        <li style="color: #faa">Fix issues that prevent Gecko's Native MathML
+          to be the default in MathJax (bug 687809)</li>
+        <li style="color: #afa">Improve Font Installation (bugs 770005, 467729 and 648548)</li>
+        <li style="color: #afa">Add support for more Open Type Math fonts (bug 407059)</li>
+        <li style="color: #aaf">Make the <code>editor/</code> aware of MathML (bug 78128)</li>
+        <li style="color: #aaf">Implement MathML Clipboard Specification (bug  539506)</li>
+        <li style="color: #ffa">Create an EPUB reader or other math tools
+          for FirefoxOS</li>
+        <li style="color: #ffa">Make FireVox
+          (and its MathSpeak support) work in recent versions of Firefox.</li>
+      </ul>
+      <div style="position: absolute; top: 550px;">
         <img src="mathzilla.svg" height="200" alt="mathzilla"/>
       </div>
     </div>
@@ -1068,15 +1121,15 @@ $ firefox output.html
     <div>
       Thanks for Watching!
       <ul>
-        <li>IRC channel: <code>#mathml</code></li>
-        <li>Mailing list: <code>dev-tech-mathml</code></li>
-        <li>MathML on MDN: <code>Web/MathML</code> and
-          <code>Mozilla/MathML_Project</code>.</li>
-        <li>Have questions? Contact
+        <li style="color: #faa;">This slideshow and more resources are available here:
+          <code>https://github.com/fred-wang/MozSummitMathML</code>
+        <li style="color: #afa;">Reaching the Community: <code>#mathml</code> and
+          <code>dev-tech-mathml@lists.mozilla.org</code></li>
+        <li  style="color: #aaf;">Have questions? Contact
           Fred Wang (<code>&lt;fred.wang.free.fr&gt;</code>) or Karl Tomlinson (<code>&lt;karlt@karlt.net&gt;</code>)
 </li>
      </ul>
-      <div>
+      <div style="position: absolute; top: 350px;">
         <img src="mathzilla.svg" height="400" alt="mathzilla"/>
       </div>
     </div>

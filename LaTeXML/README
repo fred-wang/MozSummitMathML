@@ -1,0 +1,11 @@
+This demonstrates how to use LaTeX to generate documents in various formats:
+
+- PDF: pdf/thesis.pdf
+- HTML: html/thesis.html
+- HTML with MathJax fallback: html-mathjax/thesis.html
+- EPUB: epub/???
+
+Type "make help" for further details.
+
+The LaTeX source is Boris Zbarsky's thesis: http://arxiv.org/abs/0906.0186
+

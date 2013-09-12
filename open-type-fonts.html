@@ -1,0 +1,1645 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Test Open Type Fonts</title>
+    <meta charset="utf-8"/>
+    <script type="text/x-mathjax-config">
+       MathJax.Hub.Config({
+         jax: ["input/TeX","input/MathML","output/HTML-CSS","output/NativeMML"],
+         extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js",
+       "TeX/AMSsymbols.js"],
+         MathMenu: { showFontMenu: true }
+       });  
+       MathJax.Hub.signal.Interest(function (message) {
+        if (message[0] == "Math Processing Error" ||
+            message[0] == "TeX Jax - parse error") {
+          console.log(message);
+        }
+      });
+    </script>
+    <script type="text/javascript" src="http://localhost/MathJax/unpacked/MathJax.js?config=default">
+    </script>
+
+  </head>
+  <body>
+
+<p>normal: <math mathvariant="normal"><mtext>0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</mtext></math></p>
+<p>bold: <math mathvariant="bold"><mtext>0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</mtext></math></p>
+<p>italic: <math mathvariant="italic"><mtext>0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</mtext></math></p>
+<p>bold-italic: <math mathvariant="bold-italic"><mtext>0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</mtext></math></p>
+<p>double-struck: <math mathvariant="double-struck"><mtext>0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</mtext></math></p>
+<p>bold-fraktur: <math mathvariant="bold-fraktur"><mtext>abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</mtext></math></p>
+<p>script: <math mathvariant="script"><mtext>abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</mtext></math></p>
+<p>bold-script: <math mathvariant="bold-script"><mtext>abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</mtext></math></p>
+<p>fraktur: <math mathvariant="fraktur"><mtext>abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</mtext></math></p>
+<p>sans-serif: <math mathvariant="sans-serif"><mtext>abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</mtext></math></p>
+<p>bold-sans-serif: <math mathvariant="bold-sans-serif"><mtext>0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</mtext></math></p>
+<p>sans-serif-italic: <math mathvariant="sans-serif-italic"><mtext>abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</mtext></math></p>
+<p>sans-serif-bold-italic: <math mathvariant="sans-serif-bold-italic"><mtext>abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</mtext></math></p>
+<p>monospace:
+<math mathvariant="monospace"><mtext>0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</mtext></math>
+<math mathvariant="monospace">
+<mtable>
+<mtr><mtd><mtext>0 2 4 6 8</mtext></mtd></mtr>
+<mtr><mtd><mtext>012345678</mtext></mtd></mtr>
+</mtable>
+</math>
+</p>
+<p>oldstyle numbers: \( \oldstyle {0123456789} \)</p>
+<p>mathcal: \( \mathcal {abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ} \)</p>
+<p>variants:
+<ul>
+<li>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable>
+
+<mtr>
+<mtd>
+  <mi  mathvariant="normal">&#x2032;<!-- ′ --></mi>
+  </mtd><mtd>
+  <msup>
+    <mi>x</mi>
+    <mtext>&#x2033;</mtext>
+  </msup>
+  </mtd><mtd>
+  <msup>
+    <mi>x</mi>
+    <mtext>&#x2034;</mtext>
+  </msup>
+  </mtd><mtd>
+  <mi>&#x2035;<!-- ‵ --></mi>
+  </mtd><mtd>
+  <msup>
+    <mi>x</mi>
+    <mtext>&#x2057;</mtext>
+  </msup>
+  </mtd><mtd>
+  <mi >&#x210F;<!-- ℏ --></mi>
+  </mtd><mtd>
+  <mo  stretchy="false">&#x21CC;<!-- ⇌ --></mo>
+  </mtd><mtd>
+  <mi >&#x2205;<!-- ∅ --></mi>
+  </mtd><mtd>
+  <mi  mathvariant="normal">&#x2216;<!-- ∖ --></mi>
+  </mtd><mtd>
+  <mo >&#x2216;<!-- ∖ --></mo>
+  </mtd><mtd>
+  <mo >&#x2223;<!-- ∣ --></mo>
+  </mtd><mtd>
+  <mo >&#x2224;<!-- ∤ --></mo>
+  </mtd><mtd>
+  <mo >&#x2225;<!-- ∥ --></mo>
+  </mtd><mtd>
+  <mo >&#x2226;<!-- ∦ --></mo>
+  </mtd><mtd>
+  <mo >&#x223C;<!-- ∼ --></mo>
+  </mtd><mtd>
+  <mo >&#x2248;<!-- ≈ --></mo>
+  </mtd><mtd>
+  <mo >&#x2268;<!-- ≨ --></mo>
+  </mtd><mtd>
+  <mo >&#x2269;<!-- ≩ --></mo>
+  </mtd><mtd>
+  <mo >&#x2270;<!-- ≰ --></mo>
+  </mtd><mtd>
+  <mo >&#x2271;<!-- ≱ --></mo>
+  </mtd><mtd>
+  <mo >&#x2288;<!-- ⊈ --></mo>
+  </mtd><mtd>
+  <mo >&#x2289;<!-- ⊉ --></mo>
+  </mtd><mtd>
+  <mo >&#x228A;<!-- ⊊ --></mo>
+  </mtd><mtd>
+  <mo >&#x228B;<!-- ⊋ --></mo>
+  </mtd><mtd>
+  <mo >&#x22E0;<!-- ⋠ --></mo>
+  </mtd><mtd>
+  <mo >&#x22E1;<!-- ⋡ --></mo>
+  </mtd><mtd>
+  <mo >&#x2322;<!-- ⌢ --></mo>
+  </mtd><mtd>
+  <mo >&#x2323;<!-- ⌣ --></mo>
+  </mtd><mtd>
+  <mo >&#x25B3;<!-- △ --></mo>
+  </mtd><mtd>
+  <mi >&#x25BD;<!-- ▽ --></mi>
+  </mtd><mtd>
+  <mo >&#x2A87;<!-- ⪇ --></mo>
+  </mtd><mtd>
+  <mo >&#x2A88;<!-- ⪈ --></mo>
+  </mtd><mtd>
+  <mo >&#x2ACB;<!-- ⫋ --></mo>
+  </mtd><mtd>
+  <mo >&#x2ACC;<!-- ⫌ --></mo>
+  </mtd>
+</mtr>
+
+
+<mtr>
+<mtd>
+  <mi class="MJX-variant" mathvariant="normal">&#x2032;<!-- ′ --></mi>
+  </mtd><mtd>
+  <msup>
+    <mi>x</mi>
+    <mo>&#x2033;</mo>
+  </msup>
+  </mtd><mtd>
+  <msup>
+    <mi>x</mi>
+    <mo>&#x2034;</mo>
+  </msup>
+  </mtd><mtd>
+  <mi class="MJX-variant">&#x2035;<!-- ‵ --></mi>
+  </mtd><mtd>
+  <msup>
+    <mi>x</mi>
+    <mo>&#x2057;</mo>
+  </msup>
+  </mtd><mtd>
+  <mi class="MJX-variant">&#x210F;<!-- ℏ --></mi>
+  </mtd><mtd>
+  <mo class="MJX-variant" stretchy="false">&#x21CC;<!-- ⇌ --></mo>
+  </mtd><mtd>
+  <mi class="MJX-variant">&#x2205;<!-- ∅ --></mi>
+  </mtd><mtd>
+  <mi class="MJX-variant" mathvariant="normal">&#x2216;<!-- ∖ --></mi>
+  </mtd><mtd>
+  <mo class="MJX-variant">&#x2216;<!-- ∖ --></mo>
+  </mtd><mtd>
+  <mo class="MJX-variant">&#x2223;<!-- ∣ --></mo>
+  </mtd><mtd>
+  <mo class="MJX-variant">&#x2224;<!-- ∤ --></mo>
+  </mtd><mtd>
+  <mo class="MJX-variant">&#x2225;<!-- ∥ --></mo>
+  </mtd><mtd>
+  <mo class="MJX-variant">&#x2226;<!-- ∦ --></mo>
+  </mtd><mtd>
+  <mo class="MJX-variant">&#x223C;<!-- ∼ --></mo>
+  </mtd><mtd>
+  <mo class="MJX-variant">&#x2248;<!-- ≈ --></mo>
+  </mtd><mtd>
+  <mo class="MJX-variant">&#x2268;<!-- ≨ --></mo>
+  </mtd><mtd>
+  <mo class="MJX-variant">&#x2269;<!-- ≩ --></mo>
+  </mtd><mtd>
+  <mo class="MJX-variant">&#x2270;<!-- ≰ --></mo>
+  </mtd><mtd>
+  <mo class="MJX-variant">&#x2271;<!-- ≱ --></mo>
+  </mtd><mtd>
+  <mo class="MJX-variant">&#x2288;<!-- ⊈ --></mo>
+  </mtd><mtd>
+  <mo class="MJX-variant">&#x2289;<!-- ⊉ --></mo>
+  </mtd><mtd>
+  <mo class="MJX-variant">&#x228A;<!-- ⊊ --></mo>
+  </mtd><mtd>
+  <mo class="MJX-variant">&#x228B;<!-- ⊋ --></mo>
+  </mtd><mtd>
+  <mo class="MJX-variant">&#x22E0;<!-- ⋠ --></mo>
+  </mtd><mtd>
+  <mo class="MJX-variant">&#x22E1;<!-- ⋡ --></mo>
+  </mtd><mtd>
+  <mo class="MJX-variant">&#x2322;<!-- ⌢ --></mo>
+  </mtd><mtd>
+  <mo class="MJX-variant">&#x2323;<!-- ⌣ --></mo>
+  </mtd><mtd>
+  <mo class="MJX-variant">&#x25B3;<!-- △ --></mo>
+  </mtd><mtd>
+  <mi class="MJX-variant">&#x25BD;<!-- ▽ --></mi>
+  </mtd><mtd>
+  <mo class="MJX-variant">&#x2A87;<!-- ⪇ --></mo>
+  </mtd><mtd>
+  <mo class="MJX-variant">&#x2A88;<!-- ⪈ --></mo>
+  </mtd><mtd>
+  <mo class="MJX-variant">&#x2ACB;<!-- ⫋ --></mo>
+  </mtd><mtd>
+  <mo class="MJX-variant">&#x2ACC;<!-- ⫌ --></mo>
+</mtd>
+</mtr>
+
+</mtable>
+</math>
+</li>
+</ul>
+<hr/>
+
+<p>The following equations are represented in the HTML source code as LaTeX expressions.</p>
+
+<div class="math-header">The Lorenz Equations</div>
+
+\[\begin{aligned}
+\dot{x} &amp; = \sigma(y-x) \\
+\dot{y} &amp; = \rho x - y - xz \\
+\dot{z} &amp; = -\beta z + xy
+\end{aligned} \]
+
+<div class="math-header">The Cauchy-Schwarz Inequality</div>
+
+\[ \left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right) \]
+
+<div class="math-header">A Cross Product Formula</div>
+
+\[\mathbf{V}_1 \times \mathbf{V}_2 =  \begin{vmatrix}
+\mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \\
+\frac{\partial X}{\partial u} &amp;  \frac{\partial Y}{\partial u} &amp; 0 \\
+\frac{\partial X}{\partial v} &amp;  \frac{\partial Y}{\partial v} &amp; 0
+\end{vmatrix}  \]
+
+<div class="math-header">The probability of getting \(k\) heads when flipping \(n\) coins is</div>
+
+\[P(E)   = {n \choose k} p^k (1-p)^{ n-k} \]
+
+<div class="math-header">An Identity of Ramanujan</div>
+
+\[ \frac{1}{\Bigl(\sqrt{\phi \sqrt{5}}-\phi\Bigr) e^{\frac25 \pi}} =
+1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}} {1+\frac{e^{-6\pi}}
+{1+\frac{e^{-8\pi}} {1+\ldots} } } } \]
+
+<div class="math-header">A Rogers-Ramanujan Identity</div>
+
+\[  1 +  \frac{q^2}{(1-q)}+\frac{q^6}{(1-q)(1-q^2)}+\cdots =
+\prod_{j=0}^{\infty}\frac{1}{(1-q^{5j+2})(1-q^{5j+3})},
+\quad\quad \text{for $|q|&lt;1$}. \]
+
+<div class="math-header">Maxwell&#8217;s Equations</div>
+
+\[  \begin{aligned}
+\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &amp; = \frac{4\pi}{c}\vec{\mathbf{j}} \\   \nabla \cdot \vec{\mathbf{E}} &amp; = 4 \pi \rho \\
+\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} &amp; = \vec{\mathbf{0}} \\
+\nabla \cdot \vec{\mathbf{B}} &amp; = 0 \end{aligned}
+\]
+
+<p>Finally, while display equations look good for a page of samples, the ability to mix math and text in a paragraph is also important. This expression \(\sqrt{3x-1}+(1+x)^2\) is an example of an inline equation.  As you see, MathJax equations can be used this way as well, without unduly disturbing the spacing between lines.</p>
+
+<div class="math-header">The Quadratic Formula</div>
+
+<math display='block'><mrow><mi>x</mi><mo>=</mo><mfrac><mrow><mo>&#x2212;</mo><mi>b</mi><mo>&#x00B1;</mo><msqrt><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>&#x2212;</mo><mn>4</mn><mi>a</mi><mi>c</mi></mrow></msqrt></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac></mrow></math>
+
+<div class="math-header">Cauchy's Integral Formula</div>
+
+<math display='block'>
+  <mstyle>
+    <mi>f</mi>
+    <mrow>
+      <mo>(</mo>
+      <mi>a</mi>
+      <mo>)</mo>
+    </mrow>
+    <mo>=</mo>
+ <mfrac>
+        <mn>1</mn>
+        <mrow>
+          <mn>2</mn>
+          <mi>π<!-- π --></mi>
+          <mi>i</mi>
+        </mrow>
+      </mfrac>
+    <msub>
+      <mo>∮</mo>
+      <mrow>
+        <mi>γ</mi>
+      </mrow>
+    </msub>
+    <mfrac>
+      <mrow>
+        <mi>f</mi>
+        <mo>(</mo>
+        <mi>z</mi>
+        <mo>)</mo>
+      </mrow>
+      <mrow>
+        <mi>z</mi>
+        <mo>−</mo>
+        <mi>a</mi>
+      </mrow>
+    </mfrac>
+    <mi>d</mi>
+    <mi>z</mi>
+  </mstyle>
+</math>
+
+<div class="math-header">Double angle formula for Cosines</div>
+
+<math display='block'><mrow><mi>cos</mi><mo>&#x2061;</mo><mrow><mo>(</mo><mi>&#x03b8;</mi><mo>+</mo><mi>&#x03c6;</mi><mo>)</mo></mrow><mo>=</mo><mi>cos</mi><mo>&#x2061;</mo><mrow><mo>(</mo><mi>&#x03b8;</mi><mo>)</mo></mrow><mi>cos</mi><mo>&#x2061;</mo><mrow><mo>(</mo><mi>&#x03c6;</mi><mo>)</mo></mrow><mo>&#x2212;</mo><mi>sin</mi><mo>&#x2061;</mo><mrow><mo>(</mo><mi>&#x03b8;</mi><mo>)</mo></mrow><mi>sin</mi><mo>&#x2061;</mo><mrow><mo>(</mo><mi>&#x03c6;</mi><mo>)</mo></mrow></mrow></math>
+
+<div class="math-header">Gauss' Divergence Theorem</div>
+
+<math display='block'><mrow><mrow><msub><mo>&#x222b;</mo><mrow><mi>D</mi></mrow></msub><mrow><mo>(</mo><mo>&#x2207;&#x22c5;</mo><mi>F</mi><mo>)</mo></mrow><mi>d</mi><mrow><mi>V</mi></mrow></mrow><mo>=</mo><mrow><msub><mo>&#x222b;</mo><mrow><mo>&#x2202;</mo><mi>D</mi></mrow></msub><mrow><mtext>&#x2009;</mtext><mi>F</mi><mo>&#x22c5;</mo><mi>n</mi></mrow><mi>d</mi><mi>S</mi></mrow></mrow></math>
+
+<div class="math-header">Curl of a Vector Field</div>
+
+<math display='block'><mrow><mover accent='true'><mrow><mo>&#x2207;</mo></mrow><mrow><mo>&#x2192;</mo></mrow></mover><mo>&#x00d7;</mo><mover accent='true'><mrow><mi>F</mi></mrow><mrow><mo>&#x2192;</mo></mrow></mover><mo>=</mo><mrow><mo>(</mo><mfrac><mrow><mo>&#x2202;</mo><msub><mrow><mi>F</mi></mrow><mrow><mi>z</mi></mrow></msub></mrow><mrow><mo>&#x2202;</mo><mi>y</mi></mrow></mfrac><mo>&#x2212;</mo><mfrac><mrow><mo>&#x2202;</mo><msub><mrow><mi>F</mi></mrow><mrow><mi>y</mi></mrow></msub></mrow><mrow><mo>&#x2202;</mo><mi>z</mi></mrow></mfrac><mo>)</mo></mrow><mstyle mathvariant='bold' mathsize='normal'><mrow><mi>i</mi></mrow></mstyle><mo>+</mo><mrow><mo>(</mo><mfrac><mrow><mo>&#x2202;</mo><msub><mrow><mi>F</mi></mrow><mrow><mi>x</mi></mrow></msub></mrow><mrow><mo>&#x2202;</mo><mi>z</mi></mrow></mfrac><mo>&#x2212;</mo><mfrac><mrow><mo>&#x2202;</mo><msub><mrow><mi>F</mi></mrow><mrow><mi>z</mi></mrow></msub></mrow><mrow><mo>&#x2202;</mo><mi>x</mi></mrow></mfrac><mo>)</mo></mrow><mstyle mathvariant='bold' mathsize='normal'><mrow><mi>j</mi></mrow></mstyle><mo>+</mo><mrow><mo>(</mo><mfrac><mrow><mo>&#x2202;</mo><msub><mrow><mi>F</mi></mrow><mrow><mi>y</mi></mrow></msub></mrow><mrow><mo>&#x2202;</mo><mi>x</mi></mrow></mfrac><mo>&#x2212;</mo><mfrac><mrow><mo>&#x2202;</mo><msub><mrow><mi>F</mi></mrow><mrow><mi>x</mi></mrow></msub></mrow><mrow><mo>&#x2202;</mo><mi>y</mi></mrow></mfrac><mo>)</mo></mrow><mstyle mathvariant='bold' mathsize='normal'><mrow><mi>k</mi></mrow></mstyle></mrow></math>
+
+<div class="math-header">Standard Deviation</div>
+
+<math display='block'><mrow><mi>&#x03c3;</mi><mo>=</mo><msqrt><mrow><mfrac><mrow><mn>1</mn></mrow><mrow><mi>N</mi></mrow></mfrac><mstyle displaystyle='true'><mrow><munderover><mrow><mo>&#x2211;</mo></mrow><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi>N</mi></mrow></munderover><mrow><msup><mrow><mo stretchy='false'>(</mo><msub><mrow><mi>x</mi></mrow><mrow><mi>i</mi></mrow></msub><mo>&#x2212;</mo><mi>&#x03bc;</mi><mo stretchy='false'>)</mo></mrow><mrow><mn>2</mn></mrow></msup></mrow></mrow></mstyle></mrow></msqrt><mo>.</mo></mrow></math>
+
+<div class="math-header">Definition of Christoffel Symbols</div>
+
+<math display='block'><mrow><msup><mrow><mo>(</mo><msub><mrow><mo>&#x2207;</mo></mrow><mrow><mi>X</mi></mrow></msub><mi>Y</mi><mo>)</mo></mrow><mrow><mi>k</mi></mrow></msup><mo>=</mo><msup><mrow><mi>X</mi></mrow><mrow><mi>i</mi></mrow></msup><msup><mrow><mo stretchy='false'>(</mo><msub><mrow><mo>&#x2207;</mo></mrow><mrow><mi>i</mi></mrow></msub><mi>Y</mi><mo stretchy='false'>)</mo></mrow><mrow><mi>k</mi></mrow></msup><mo>=</mo><msup><mrow><mi>X</mi></mrow><mrow><mi>i</mi></mrow></msup><mrow><mo>(</mo><mfrac><mrow><mo>&#x2202;</mo><msup><mrow><mi>Y</mi></mrow><mrow><mi>k</mi></mrow></msup></mrow><mrow><mo>&#x2202;</mo><msup><mrow><mi>x</mi></mrow><mrow><mi>i</mi></mrow></msup></mrow></mfrac><mo>+</mo><msubsup><mrow><mi>&#x0393;</mi></mrow><mrow><mi>i</mi><mi>m</mi></mrow><mrow><mi>k</mi></mrow></msubsup><msup><mrow><mi>Y</mi></mrow><mrow><mi>m</mi></mrow></msup><mo>)</mo></mrow></mrow></math>
+
+<hr/>
+
+<table border="1">
+
+<tbody><tr>
+<td></td>
+<th scope="col">As rendered by TeX</th>
+<th scope="col">As rendered by your browser</th></tr>
+
+<tr>
+<td>1</td>
+
+<td><img src="https://developer.mozilla.org/@api/deki/files/4578/=ex1.png" alt="TeXbook, 16.2-16.3" height="22" width="38"></td>
+<td>
+<math display="block">
+<mrow>
+  <msup>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msup>
+  <msup>
+    <mi>y</mi>
+
+    <mn>2</mn>
+  </msup>
+</mrow>
+</math>
+</td></tr>
+
+<tr>
+<td>2</td>
+<td><img src="https://developer.mozilla.org/@api/deki/files/4579/=ex2.png" alt="TeXbook, 16.2-16.3" height="17" width="30"></td>
+<td>
+<math display="block">
+<!--
+<mrow>
+  <msub><mi></mi><mn>2</mn></msub>
+  <msub><mi>F</mi><mn>3</mn></msub>
+</mrow>
+-->
+<mrow>
+
+  <mmultiscripts>
+    <mi>F</mi>
+    <mn>3</mn><none></none>
+    <mprescripts></mprescripts>
+    <mn>2</mn><none></none>
+  </mmultiscripts>
+</mrow>
+</math>
+
+</td></tr>
+
+<tr>
+<td>3</td>
+<td><img src="https://developer.mozilla.org/@api/deki/files/4586/=ex21.png" alt="TeXbook, 17-17.1" height="47" width="58"></td>
+<td>
+<math display="block">
+<mrow>
+  <mfrac>
+    <mrow>
+      <mi>x</mi>
+      <mo>+</mo>
+
+      <msup>
+        <mi>y</mi>
+        <mn>2</mn>
+      </msup>
+    </mrow>
+    <mrow>
+      <mi>k</mi>
+
+      <mo>+</mo>
+      <mn>1</mn>
+    </mrow>
+  </mfrac>
+</mrow>
+</math>
+</td></tr>
+
+<tr>
+<td>4</td>
+
+<td><img src="https://developer.mozilla.org/@api/deki/files/4587/=ex22.png" alt="TeXbook, 17-17.1" height="25" width="76"></td>
+<td>
+<math display="block">
+<mrow>
+  <mi>x</mi>
+  <mo>+</mo>
+  <msup>
+    <mi>y</mi>
+    <mfrac>
+
+      <mn>2</mn>
+      <mrow>
+        <mi>k</mi>
+        <mo>+</mo>
+        <mn>1</mn>
+      </mrow>
+    </mfrac>
+
+  </msup>
+</mrow>
+</math>
+</td></tr>
+
+<tr>
+<td>5</td>
+<td><img src="https://developer.mozilla.org/@api/deki/files/4588/=ex23.png" alt="TeXbook, 17-17.1" height="42" width="30"></td>
+<td>
+<math display="block">
+<mrow>
+  <mfrac>
+    <mi>a</mi>
+
+    <mrow>
+      <mi>b</mi>
+      <mo>/</mo>
+      <mn>2</mn>
+    </mrow>
+  </mfrac>
+</mrow>
+</math>
+
+</td></tr>
+
+<tr>
+<td>6</td>
+<td><img src="https://developer.mozilla.org/@api/deki/files/4589/=ex24.png" alt="TeXbook, 17.5-17.6" height="138" width="220"></td>
+<td>
+<math display="block">
+<mrow>
+  <msub>
+    <mi>a</mi>
+    <mn>0</mn>
+
+  </msub>
+  <mo>+</mo>
+  <mfrac>
+    <mn>1</mn>
+    <mstyle displaystyle="true" scriptlevel="0">
+      <msub>
+        <mi>a</mi>
+
+        <mn>1</mn>
+      </msub>
+      <mo>+</mo>
+      <mfrac>
+        <mn>1</mn>
+        <mstyle displaystyle="true" scriptlevel="0">
+          <msub>
+
+            <mi>a</mi>
+            <mn>2</mn>
+          </msub>
+          <mo>+</mo>
+          <mfrac>
+            <mn>1</mn>
+            <mstyle displaystyle="true" scriptlevel="0">
+
+              <msub>
+                <mi>a</mi>
+                <mn>3</mn>
+              </msub>
+              <mo>+</mo>
+              <mfrac>
+                <mn>1</mn>
+
+                <mstyle displaystyle="true" scriptlevel="0">
+                  <msub>
+                    <mi>a</mi>
+                    <mn>4</mn>
+                  </msub>
+                </mstyle>
+              </mfrac>
+            </mstyle>
+          </mfrac>
+
+        </mstyle>
+      </mfrac>
+    </mstyle>
+  </mfrac>
+</mrow>
+</math>
+</td></tr>
+
+<tr>
+<td>7</td>
+<td><img src="https://developer.mozilla.org/@api/deki/files/4590/=ex25.png" alt="TeXbook, 17.5-17.6" height="85" width="200"></td>
+<td>
+
+<math>
+<mrow>
+  <msub>
+    <mi>a</mi>
+    <mn>0</mn>
+  </msub>
+  <mo>+</mo>
+  <mfrac>
+
+    <mn>1</mn>
+    <mrow>
+      <msub>
+        <mi>a</mi>
+        <mn>1</mn>
+      </msub>
+      <mo>+</mo>
+
+      <mfrac>
+        <mn>1</mn>
+        <mrow>
+          <msub>
+            <mi>a</mi>
+            <mn>2</mn>
+          </msub>
+
+          <mo>+</mo>
+          <mfrac>
+            <mn>1</mn>
+            <mrow>
+              <msub>
+                <mi>a</mi>
+                <mn>3</mn>
+
+              </msub>
+              <mo>+</mo>
+              <mfrac>
+                <mn>1</mn>
+                <mrow>
+                  <msub>
+                    <mi>a</mi>
+
+                    <mn>4</mn>
+                  </msub>
+                </mrow>
+              </mfrac>
+            </mrow>
+          </mfrac>
+        </mrow>
+      </mfrac>
+
+    </mrow>
+  </mfrac>
+</mrow>
+</math>
+</td></tr>
+
+<tr>
+<td>8</td>
+<td><img src="https://developer.mozilla.org/@api/deki/files/4591/=ex26.png" alt="TeXbook, 17.5-17.6" height="50" width="54"></td>
+<td>
+<math display="block">
+<mrow>
+  <mo>(</mo>
+
+  <mfrac linethickness="0">
+    <mi>n</mi>
+    <mrow>
+      <mi>k</mi>
+      <mo>/</mo>
+      <mn>2</mn>
+    </mrow>
+
+  </mfrac>
+  <mo>)</mo>
+</mrow>
+</math>
+</td></tr>
+
+<tr>
+<td>9</td>
+<td><img src="https://developer.mozilla.org/@api/deki/files/4592/=ex27.png" alt="TeXbook, 17.7" height="50" width="237"></td>
+<td>
+<math display="block">
+<mrow>
+  <mrow>
+
+
+    <mo>(</mo>
+    <mfrac linethickness="0">
+      <mi>p</mi>
+      <mn>2</mn>
+    </mfrac>
+    <mo>)</mo>
+  </mrow>
+
+  <msup>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msup>
+  <msup>
+    <mi>y</mi>
+    <mrow>
+
+      <mi>p</mi>
+      <mo>-</mo>
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mo>-</mo>
+  <mfrac>
+
+    <mn>1</mn>
+    <mrow>
+      <mn>1</mn>
+      <mo>-</mo>
+      <mi>x</mi>
+    </mrow>
+  </mfrac>
+
+  <mfrac>
+    <mn>1</mn>
+    <mrow>
+      <mn>1</mn>
+      <mo>-</mo>
+      <msup>
+        <mi>x</mi>
+
+        <mn>2</mn>
+      </msup>
+    </mrow>
+  </mfrac>
+</mrow>
+</math>
+</td></tr>
+
+<tr>
+<td>10</td>
+<td><img src="https://developer.mozilla.org/@api/deki/files/4593/=ex29.png" alt="TeXbook, 17.7-17.8" height="63" width="116"></td>
+
+<td>
+<math display="block">
+<mrow>
+  <munder>
+    <mo>∑</mo>
+    <mrow>
+      <mfrac linethickness="0">
+        <mrow>
+          <mn>0</mn>
+          <mo>≤</mo>
+
+          <mi>i</mi>
+          <mo>≤</mo>
+          <mi>m</mi>
+        </mrow>
+        <mrow>
+          <mn>0</mn>
+          <mo>&lt;</mo>
+
+          <mi>j</mi>
+          <mo>&lt;</mo>
+          <mi>n</mi>
+        </mrow>
+      </mfrac>
+    </mrow>
+  </munder>
+  <mi>P</mi>
+
+  <mo stretchy="false">(</mo>
+  <mi>i</mi>
+  <mo>,</mo>
+  <mi>j</mi>
+  <mo stretchy="false">)</mo>
+</mrow>
+</math>
+
+</td></tr>
+
+<tr>
+<td>11</td>
+<td><img src="https://developer.mozilla.org/@api/deki/files/4580/=ex3.png" alt="TeXbook, 16.2-16.3" height="18" width="27"></td>
+<td>
+<math display="block">
+<mrow>
+<msup>
+  <mi>x</mi>
+  <mrow>
+    <mn>2</mn>
+
+    <mi>y</mi>
+  </mrow>
+</msup>
+</mrow>
+</math>
+</td></tr>
+
+<tr>
+<td>12</td>
+<td><img src="https://developer.mozilla.org/@api/deki/files/4594/=ex30.png" alt="TeXbook, 17.8" height="61" width="175"></td>
+<td>
+<math display="block">
+<mrow>
+
+  <munderover>
+    <mo>∑</mo>
+    <mrow>
+      <mi>i</mi>
+      <mo>=</mo>
+      <mn>1</mn>
+    </mrow>
+
+    <mi>p</mi>
+  </munderover>
+  <munderover>
+    <mo>∑</mo>
+    <mrow>
+      <mi>j</mi>
+      <mo>=</mo>
+
+      <mn>1</mn>
+    </mrow>
+    <mi>q</mi>
+  </munderover>
+  <munderover>
+    <mo>∑</mo>
+    <mrow>
+      <mi>k</mi>
+
+      <mo>=</mo>
+      <mn>1</mn>
+    </mrow>
+    <mi>r</mi>
+  </munderover>
+  <msub>
+    <mi>a</mi>
+
+    <mrow>
+      <mi>i</mi>
+      <mi>j</mi>
+    </mrow>
+  </msub>
+  <msub>
+    <mi>b</mi>
+
+    <mrow>
+      <mi>j</mi>
+      <mi>k</mi>
+    </mrow>
+  </msub>
+  <msub>
+    <mi>c</mi>
+
+    <mrow>
+      <mi>k</mi>
+      <mi>i</mi>
+    </mrow>
+  </msub>
+</mrow>
+</math>
+</td></tr>
+
+<tr>
+
+<td>13</td>
+<td><img src="https://developer.mozilla.org/@api/deki/files/4595/=ex31.png" alt="TeXbook, 17.9-17.10" height="100" width="405"></td>
+<td>
+<math display="block">
+<mrow>
+  <msqrt>
+    <mn>1</mn>
+    <mo>+</mo>
+    <msqrt>
+      <mn>1</mn>
+
+      <mo>+</mo>
+      <msqrt>
+        <mn>1</mn>
+        <mo>+</mo>
+        <msqrt>
+          <mn>1</mn>
+          <mo>+</mo>
+
+          <msqrt>
+            <mn>1</mn>
+            <mo>+</mo>
+            <msqrt>
+              <mn>1</mn>
+              <mo>+</mo>
+              <msqrt>
+
+                <mn>1</mn>
+                <mo>+</mo>
+                <mi>x</mi>
+              </msqrt>
+            </msqrt>
+          </msqrt>
+        </msqrt>
+
+      </msqrt>
+    </msqrt>
+  </msqrt>
+</mrow>
+</math>
+</td></tr>
+
+<tr>
+<td>14</td>
+<td><img src="https://developer.mozilla.org/@api/deki/files/4596/=ex34.png" alt="TeXbook, 17.10" height="50" width="272"></td>
+<td>
+<math display="block">
+<mrow>
+
+  <mrow>
+    <mo>(</mo>
+    <mfrac>
+      <msup>
+        <mo>∂</mo>
+        <mn>2</mn>
+      </msup>
+      <mrow>
+
+        <mo>∂</mo>
+        <msup>
+          <mi>x</mi>
+          <mn>2</mn>
+        </msup>
+      </mrow>
+    </mfrac>
+    <mo>+</mo>
+
+    <mfrac>
+      <msup>
+        <mo>∂</mo>
+        <mn>2</mn>
+      </msup>
+      <mrow>
+        <mo>∂</mo>
+        <msup>
+
+          <mi>y</mi>
+          <mn>2</mn>
+        </msup>
+      </mrow>
+    </mfrac>
+    <mo>)</mo>
+  </mrow>
+
+  <msup>
+    <mrow>
+      <mo minsize="1.5">|</mo>
+      <mi>φ <!-- \varphi --></mi>
+      <mo stretchy="false">(</mo>
+      <mi>x</mi>
+      <mo>+</mo>
+
+      <mi mathvariant="normal">i</mi>
+      <mi>y</mi>
+      <mo stretchy="false">)</mo>
+      <mo minsize="1.5">|</mo>
+    </mrow>
+    <mn>2</mn>
+
+  </msup>
+  <mo>=</mo>
+  <mn>0</mn>
+</mrow>
+</math>
+</td></tr>
+
+<tr>
+<td>15</td>
+<td><img src="https://developer.mozilla.org/@api/deki/files/4581/=ex4.png" alt="TeXbook, 16.2-16.3" height="22" width="31"></td>
+<td>
+
+<math display="block">
+<mrow>
+  <msup>
+    <mn>2</mn>
+    <msup>
+      <mn>2</mn>
+      <msup>
+        <mn>2</mn>
+
+        <mi>x</mi>
+      </msup>
+    </msup>
+  </msup>
+</mrow>
+</math>
+</td></tr>
+
+<tr>
+<td>16</td>
+<td><img src="https://developer.mozilla.org/@api/deki/files/4597/=ex40.png" alt="TeXbook, 18.10-18.11" height="49" width="55"></td>
+
+<td>
+<math display="block">
+<mrow>
+  <msubsup>
+    <mo stretchy="false">∫</mo>
+    <mn>1</mn>
+    <mi>x</mi>
+ </msubsup>
+ <mfrac>
+
+   <mrow><mo mathvariant="italic">d</mo><mi>t</mi></mrow>
+   <mi>t</mi>
+ </mfrac>
+</mrow>
+</math>
+</td></tr>
+
+<tr>
+<td>17</td>
+<td><img src="https://developer.mozilla.org/@api/deki/files/4599/=ex41.png" alt="TeXbook, 18.12-18.13" height="47" width="91"></td>
+<td>
+
+<math display="block">
+<mrow>
+  <msub>
+    <mo>∬ <!-- \iint --></mo>
+    <mi>D</mi>
+  </msub>
+  <mo mathvariant="italic">d</mo><mi>x</mi>
+  <mo> </mo>
+
+  <mo mathvariant="italic">d</mo><mi>y</mi>
+</mrow>
+</math>
+</td></tr>
+
+<tr>
+<td>18</td>
+<td><img src="https://developer.mozilla.org/@api/deki/files/4600/=ex43.png" alt="TeXbook, 18.23" height="66" width="250"></td>
+<td>
+<math display="block">
+<mrow>
+  <mi>f</mi>
+
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mrow>
+    <mo>{</mo>
+
+    <mtable>
+      <mtr>
+        <mtd columnalign="center">
+          <mrow>
+            <mn>1</mn>
+            <mo>/</mo>
+            <mn>3</mn>
+
+          </mrow>
+        </mtd>
+        <mtd columnalign="left">
+          <mrow>
+            <mtext>if&nbsp;</mtext>
+            <mn>0</mn>
+            <mo>≤</mo>
+            <mi>x</mi>
+
+            <mo>≤</mo>
+            <mn>1</mn>
+            <mo>;</mo>
+          </mrow>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd columnalign="center">
+
+          <mrow>
+            <mn>2</mn>
+            <mo>/</mo>
+            <mn>3</mn>
+          </mrow>
+        </mtd>
+        <mtd columnalign="center">
+
+          <mrow>
+            <mtext>if&nbsp;</mtext>
+            <mn>3</mn>
+            <mo>≤</mo>
+            <mi>x</mi>
+            <mo>≤</mo>
+            <mn>4</mn>
+
+            <mo>;</mo>
+          </mrow>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd columnalign="center">
+          <mn>0</mn>
+        </mtd>
+
+        <mtd columnalign="left">
+          <mtext>elsewhere.</mtext>
+        </mtd>
+      </mtr>
+    </mtable>
+  </mrow>
+</mrow>
+</math>
+</td></tr>
+
+<tr>
+<td>19</td>
+<td><img src="https://developer.mozilla.org/@api/deki/files/4601/=ex44.png" alt="TeXbook, 18.23-18.24" height="44" width="101"></td>
+<td>
+<math display="block">
+<mover>
+  <mrow>
+    <mi>x</mi>
+    <mo>+</mo>
+    <mo>...</mo>
+
+    <mo>+</mo>
+    <mi>x</mi>
+  </mrow>
+  <mover>
+    <mo>⏞</mo>
+    <mrow><mi>k</mi> <mspace width="thinmathspace"></mspace> <mtext>times</mtext></mrow>
+  </mover>
+
+</mover>
+</math>
+</td></tr>
+
+<tr>
+<td>20</td>
+<td><img src="https://developer.mozilla.org/@api/deki/files/4582/=ex5.png" alt="TeXbook, 16.2-16.3" height="13" width="25"></td>
+<td>
+<math display="block">
+<mrow>
+  <msub>
+    <mi>y</mi>
+    <msup>
+
+      <mi>x</mi>
+      <mn>2</mn>
+    </msup>
+  </msub>
+</mrow>
+</math>
+</td></tr>
+
+<tr>
+<td>21</td>
+
+<td><img src="https://developer.mozilla.org/@api/deki/files/4602/=ex51.png" alt="TeXbook, 18.40" height="56" width="253"></td>
+<td>
+<math display="block">
+<mrow>
+  <munder>
+    <mo>∑</mo>
+    <mrow>
+      <mi>p</mi>
+      <mtext>&nbsp;prime</mtext>
+    </mrow>
+
+  </munder>
+  <mi>f</mi>
+  <mo stretchy="false">(</mo>
+  <mi>p</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+
+  <msub>
+    <mo stretchy="false">∫</mo>
+    <mrow>
+      <mi>t</mi>
+      <mo>&gt;</mo>
+      <mn>1</mn>
+    </mrow>
+  </msub>
+
+  <mi>f</mi>
+  <mo stretchy="false">(</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+  <mo> </mo>
+  <mo mathvariant="italic">d</mo>
+
+  <mi>π</mi>
+  <mo stretchy="false">(</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+</mrow>
+</math>
+</td></tr>
+
+<tr>
+<td>22</td>
+
+<td><img src="https://developer.mozilla.org/@api/deki/files/4603/=ex52.png" alt="TeXbook, 18.41" height="81" width="159"></td>
+<td>
+<math display="block">
+<mrow>
+  <mo stretchy="false">{</mo>
+  <munder>
+    <mrow>
+      <mover>
+        <mrow>
+          <mpadded width="0em"><mphantom><mo>(</mo></mphantom></mpadded>
+          <mi>a</mi>
+          <mo>,</mo>
+          <mo>...</mo>
+          <mo>,</mo>
+          <mi>a</mi>
+        </mrow>
+
+        <mover>
+          <mo>⏞</mo>
+          <mrow>
+            <mi>k</mi>
+            <mtext>&nbsp;</mtext>
+            <mi>a</mi>
+            <mtext>'s</mtext>
+
+          </mrow>
+        </mover>
+      </mover>
+      <mo>,</mo>
+      <mover>
+        <mrow>
+          <mpadded width="0em"><mphantom><mo>(</mo></mphantom></mpadded>
+          <mi>b</mi>
+          <mo>,</mo>
+          <mo>...</mo>
+          <mo>,</mo>
+          <mi>b</mi>
+        </mrow>
+
+        <mover>
+          <mo>⏞</mo>
+          <mrow>
+            <mi>ℓ</mi>
+            <mtext>&nbsp;</mtext>
+            <mi>b</mi>
+            <mtext>'s</mtext>
+          </mrow>
+
+        </mover>
+      </mover>
+    </mrow>
+    <munder>
+      <mo>⏟</mo>
+      <mrow>
+        <mi>k</mi>
+        <mo>+</mo>
+
+        <mi>ℓ</mi>
+        <mtext>&nbsp;elements</mtext>
+      </mrow>
+    </munder>
+  </munder>
+  <mo stretchy="false">}</mo>
+</mrow>
+</math>
+</td></tr>
+
+<tr>
+<td>23</td>
+<td><img src="https://developer.mozilla.org/@api/deki/files/4604/=ex53.png" alt="TeXbook, 18.42" height="108" width="213"></td>
+<td>
+<math display="block">
+<mrow>
+  <mo>(</mo>
+  <mtable>
+    <mtr>
+      <mtd columnalign="center">
+
+        <mrow>
+          <mo>(</mo>
+          <mtable>
+            <mtr>
+              <mtd columnalign="center">
+                <mi>a</mi>
+              </mtd>
+              <mtd columnalign="center">
+
+                <mi>b</mi>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd columnalign="center">
+                <mi>c</mi>
+              </mtd>
+              <mtd columnalign="center">
+
+                <mi>d</mi>
+              </mtd>
+            </mtr>
+          </mtable>
+          <mo>)</mo>
+        </mrow>
+      </mtd>
+      <mtd columnalign="center">
+
+        <mrow>
+          <mo>(</mo>
+          <mtable>
+            <mtr>
+              <mtd columnalign="center">
+                <mi>e</mi>
+              </mtd>
+              <mtd columnalign="center">
+
+                <mi>f</mi>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd columnalign="center">
+                <mi>g</mi>
+              </mtd>
+              <mtd columnalign="center">
+
+                <mi>h</mi>
+              </mtd>
+            </mtr>
+          </mtable>
+          <mo>)</mo>
+        </mrow>
+      </mtd>
+    </mtr>
+
+    <mtr>
+      <mtd columnalign="center">
+        <mn>0</mn>
+      </mtd>
+      <mtd columnalign="center">
+        <mrow>
+          <mo>(</mo>
+          <mtable>
+
+            <mtr>
+              <mtd columnalign="center">
+                <mi>i</mi>
+              </mtd>
+              <mtd columnalign="center">
+                <mi>j</mi>
+              </mtd>
+            </mtr>
+
+            <mtr>
+              <mtd columnalign="center">
+                <mi>k</mi>
+              </mtd>
+              <mtd columnalign="center">
+                <mi>l</mi>
+              </mtd>
+            </mtr>
+
+          </mtable>
+          <mo>)</mo>
+        </mrow>
+      </mtd>
+    </mtr>
+  </mtable>
+  <mo>)</mo>
+</mrow>
+
+</math>
+</td></tr>
+
+<tr>
+<td>24</td>
+<td><img src="https://developer.mozilla.org/@api/deki/files/4605/=ex54.png" alt="TeXbook, 18.43" height="130" width="344"></td>
+<td>
+<math display="block">
+<mrow>
+  <mo>det</mo>
+  <mo>|</mo>
+  <mtable>
+
+    <mtr>
+      <mtd columnalign="center">
+        <msub>
+          <mi>c</mi>
+          <mn>0</mn>
+        </msub>
+      </mtd>
+      <mtd columnalign="center">
+
+        <msub>
+          <mi>c</mi>
+          <mn>1</mn>
+        </msub>
+      </mtd>
+      <mtd columnalign="center">
+        <msub>
+          <mi>c</mi>
+
+          <mn>2</mn>
+        </msub>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>…</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <msub>
+
+          <mi>c</mi>
+          <mi>n</mi>
+        </msub>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <msub>
+
+          <mi>c</mi>
+          <mn>1</mn>
+        </msub>
+      </mtd>
+      <mtd columnalign="center">
+        <msub>
+          <mi>c</mi>
+
+          <mn>2</mn>
+        </msub>
+      </mtd>
+      <mtd columnalign="center">
+        <msub>
+          <mi>c</mi>
+          <mn>3</mn>
+
+        </msub>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>…</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <msub>
+          <mi>c</mi>
+
+          <mrow>
+            <mi>n</mi>
+            <mo>+</mo>
+            <mn>1</mn>
+          </mrow>
+        </msub>
+      </mtd>
+
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <msub>
+          <mi>c</mi>
+          <mn>2</mn>
+        </msub>
+      </mtd>
+
+      <mtd columnalign="center">
+        <msub>
+          <mi>c</mi>
+          <mn>3</mn>
+        </msub>
+      </mtd>
+      <mtd columnalign="center">
+        <msub>
+
+          <mi>c</mi>
+          <mn>4</mn>
+        </msub>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>…</mo>
+      </mtd>
+      <mtd columnalign="center">
+
+        <msub>
+          <mi>c</mi>
+          <mrow>
+            <mi>n</mi>
+            <mo>+</mo>
+            <mn>2</mn>
+          </mrow>
+
+        </msub>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mo>⋮</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⋮</mo>
+
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⋮</mo>
+      </mtd>
+      <mtd columnalign="center">
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⋮</mo>
+      </mtd>
+
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <msub>
+          <mi>c</mi>
+          <mi>n</mi>
+        </msub>
+      </mtd>
+
+      <mtd columnalign="center">
+        <msub>
+          <mi>c</mi>
+          <mrow>
+            <mi>n</mi>
+            <mo>+</mo>
+            <mn>1</mn>
+
+          </mrow>
+        </msub>
+      </mtd>
+      <mtd columnalign="center">
+        <msub>
+          <mi>c</mi>
+          <mrow>
+            <mi>n</mi>
+
+            <mo>+</mo>
+            <mn>2</mn>
+          </mrow>
+        </msub>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>…</mo>
+      </mtd>
+
+      <mtd columnalign="center">
+        <msub>
+          <mi>c</mi>
+          <mrow>
+            <mn>2</mn>
+            <mi>n</mi>
+          </mrow>
+
+        </msub>
+      </mtd>
+    </mtr>
+  </mtable>
+  <mo>|</mo>
+  <mo>&gt;</mo>
+  <mn>0</mn>
+</mrow>
+
+</math>
+</td></tr>
+
+<tr>
+<td>25</td>
+<td><img src="https://developer.mozilla.org/@api/deki/files/4598/=ex6.png" alt="TeXbook, 16.2-16.3" height="14" width="25"></td>
+<td>
+<math display="block">
+<msub>
+  <mi>y</mi>
+  <msub>
+    <mi>x</mi>
+
+    <mn>2</mn>
+  </msub>
+</msub>
+</math>
+</td></tr>
+
+<tr>
+<td>26</td>
+<td><img src="https://developer.mozilla.org/@api/deki/files/4583/=ex7.png" alt="TeXbook, 16.4-16.5" height="23" width="90"></td>
+<td>
+<math display="block">
+<mrow>
+  <msubsup>
+
+    <mi>x</mi>
+    <mn>92</mn>
+    <mn>31415</mn>
+  </msubsup>
+  <mo>+</mo>
+  <mi>π</mi>
+</mrow>
+
+</math>
+</td></tr>
+
+<tr>
+<td>27</td>
+<td><img src="https://developer.mozilla.org/@api/deki/files/4584/=ex8.png" alt="TeXbook, 16.4-16.5" height="36" width="27"></td>
+<td>
+<math display="block">
+<msubsup>
+  <mi>x</mi>
+  <msubsup>
+    <mi>y</mi>
+
+    <mi>b</mi>
+    <mi>a</mi>
+  </msubsup>
+  <msubsup>
+    <mi>z</mi>
+    <mi>c</mi>
+    <mi>d</mi>
+
+  </msubsup>
+</msubsup>
+</math>
+</td></tr>
+
+<tr>
+<td>28</td>
+<td><img src="https://developer.mozilla.org/@api/deki/files/4585/=ex9.png" alt="TeXbook, 16.4-16.5" height="22" width="24"></td>
+<td>
+<math display="block">
+<msubsup>
+  <mi>y</mi>
+  <mn>3</mn>
+
+  <mrow>
+    <mo>′</mo>
+    <mo>′</mo>
+    <mo>′</mo>
+  </mrow>
+</msubsup>
+</math>
+
+<math display="block">
+<msubsup>
+  <mi>y</mi>
+
+  <mn>3</mn>
+  <mrow>
+    <mo>'</mo>
+    <mo>'</mo>
+    <mo>'</mo>
+  </mrow>
+</msubsup>
+
+</math>
+</td></tr>
+</tbody></table>  
+
+
+<math display="block">
+  <mrow>
+    <mi>&pi;</mi>
+    <mo stretchy="false">(</mo>
+    <mi>n</mi>
+    <mo stretchy="false">)</mo>
+    <mo>=</mo>
+    <munderover>
+      <mo>&sum;</mo>
+      <mrow>
+        <mi>m</mi>
+        <mo>=</mo>
+        <mn>2</mn>
+      </mrow>
+      <mi>n</mi>
+    </munderover>
+    <mrow>
+      <mo>&lfloor;</mo>
+      <msup>
+        <mrow>
+          <mo>(</mo>
+          <mrow>
+            <munderover>
+              <mo>&sum;</mo>
+              <mrow>
+                <mi>k</mi>
+
+                <mo>=</mo>
+
+                <mn>1</mn>
+              </mrow>
+              <mrow>
+                <mi>m</mi>
+                <mo>-</mo>
+                <mn>1</mn>
+              </mrow>
+            </munderover>
+            <mrow>
+              <mo minsize="1.5">&lfloor;</mo>
+              <mo>(</mo>
+              <mi>m</mi>
+              <mo>/</mo>
+              <mi>k</mi>
+              <mo>)</mo>
+              <mo minsize="2">/</mo>
+              <mo>&lceil;</mo>
+              <mi>m</mi>
+              <mo>/</mo>
+              <mi>k</mi>
+              <mo>&rceil;</mo>
+              <mo minsize="1.5">&rfloor;</mo>
+            </mrow>
+          </mrow>
+          <mo>)</mo>
+        </mrow>
+        <mrow>
+          <mo>-</mo>
+          <mn>1</mn>
+        </mrow>
+      </msup>
+      <mo>&rfloor;</mo>
+    </mrow>
+  </mrow>
+</math>
+
+  </body>
+</html>
