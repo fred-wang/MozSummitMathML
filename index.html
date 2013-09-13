@@ -61,25 +61,24 @@
         nmax = divs.length;
         window.onkeydown = handleKeyEvent;
         for (n = 0; n < nmax; n++) {
-          divs[n].style.visibility = "hidden";
+          divs[n].style.zIndex = -1;
           divs[n].style.position = "absolute";
         }
 
         var ua = navigator.userAgent;
         var isGecko = ua.indexOf("Gecko") > -1 && ua.indexOf("KHTML") === -1;
         if (!isGecko) {
-          document.getElementById('warning').style.visibility = "visible";
+          document.getElementById('warning').style.zIndex = 1;
           return;
         }
 
         divs[nmax - 1].parentNode.removeChild(divs[nmax - 1]);
         nmax--;
-        n = 0;
+        n = nmax-1;
+        nextSlide();
 
         setbevelled();
-
         running = false;
-        nextSlide();
       }
 
       function ensureFullScreen() {
@@ -116,16 +115,16 @@
       
       function prevSlide()
       {
-        divs[n].style.visibility = "hidden";
+        divs[n].style.zIndex = -1;
         n = (n - 1 + nmax) % nmax;
-        divs[n].style.visibility = "visible";
+        divs[n].style.zIndex = 1;
       }
 
       function nextSlide()
       {
-        divs[n].style.visibility = "hidden";
+        divs[n].style.zIndex = -1;
         n = (n + 1) % nmax;
-        divs[n].style.visibility = "visible";
+        divs[n].style.zIndex = 1;
       }
 
       function next()
@@ -1137,7 +1136,7 @@ $ firefox output.html
      <div></div>
 
      <div id="warning"
-       style="visibility: hidden; position: absolute; text-align:center;
+       style="z-index: -1; position: absolute; text-align:center;
               color: #faa;">
       <br/>
       <br/>
