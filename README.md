@@ -156,4 +156,3 @@ Additional resources:
      - See also [MathML](https://developer.mozilla.org/docs/Web/MathML),
        [MathMLProject](https://developer.mozilla.org/en-US/docs/Mozilla/MathML_Project)
        [MathML:HomePage](https://wiki.mozilla.org/MathML:Home_Page).
-
