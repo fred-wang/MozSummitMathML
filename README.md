@@ -9,7 +9,7 @@ Slides for the Innovation Fair of Mozilla Summit 2013
 
 Additional resources:
 
-  1. History: [Mozilla MathML Project Update](https://developer.mozilla.org/en-US/docs/Mozilla/MathML_Project/Updates) ; [History of the Mozilla Project](https://www.mozilla.org/en-US/about/history/) ; [Mozilla mascot](https://en.wikipedia.org/wiki/Mozilla_%28mascot%29) ; [History of the World Wide Web](https://en.wikipedia.org/wiki/History_of_the_World_Wide_Web)
+  1. History: [Mozilla MathML Project Update](https://developer.mozilla.org/en-US/docs/Mozilla/MathML_Project/Updates) ; [History of the Mozilla Project](https://www.mozilla.org/en-US/about/history/) ; [Mozilla mascot](https://en.wikipedia.org/wiki/Mozilla_%28mascot%29) ; [History of the World Wide Web](https://en.wikipedia.org/wiki/History_of_the_World_Wide_Web) ; [Introducing the Mozilla Science Lab](https://blog.mozilla.org/blog/2013/06/14/5992/)
 
   2. MathML demos ; install [math fonts](https://developer.mozilla.org/en-US/docs/Mozilla/MathML_Project/Fonts) for best rendering.
      - MathML Start Page in various languages: [English](https://developer.mozilla.org/en-US/docs/Mozilla/MathML_Project/Start), [Arabic](https://developer.mozilla.org/ar/docs/Mozilla_MathML_Project/Start), [Chinese](https://developer.mozilla.org/zh-CN/docs/Mozilla_MathML_Project/Start), [Hebrew](https://developer.mozilla.org/he/docs/Mozilla_MathML_Project/Start), [Thai](https://developer.mozilla.org/th/docs/Mozilla_MathML_Project/Start)
@@ -61,11 +61,15 @@ Additional resources:
         [MathJax](http://cdn.mathjax.org/mathjax/latest/test/sample-dynamic.html).
         See
         [Client Side Conversion](https://developer.mozilla.org/en-US/docs/Web/MathML/Authoring#Client-side_Conversion) for quick hints on how to use them on            your pages.
-     - itex2MML, **LaTeXML** and more: See [Command line Programs](https://developer.mozilla.org/en-US/docs/Web/MathML/Authoring#Command-line_Programs).
-       (Need to update the article)
+     - itex2MML, **LaTeXML** and more: See [Command line Programs](https://developer.mozilla.org/en-US/docs/Web/MathML/Authoring#Command-line_Programs) for
+       how to install and use them.
+       itex2MML is used by instiki and you can play with the
+       [Sandbox](http://golem.ph.utexas.edu/wiki/instiki/show/Sandbox).
        For LaTeXML, it is recommended to use the SVN version for now as the
-       release is very old. See the `LaTeXML/` directory on this repository
-       for an example and various configurations.
+       release is very old ; you can try the `LaTeXML/` directory on this
+       repository for an example and various configurations.
+       There is also an [online LaTeX editor](http://latexml.mathweb.org/editor)
+       with on-the-fly preview.
      - By default, **LibreOffice** uses a "semi-WYSIWYG" editor that is, you
       enter a simple "StarMath" syntax and have access to a math preview and to
       an equation panel with predefined constructions.
