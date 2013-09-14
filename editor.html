@@ -1,0 +1,327 @@
+<!doctype html>
+<html>
+  <head>
+    <title>MathML Editor Project</title>
+    <meta charset="utf-8"/>
+  </head>
+  <body contenteditable="true" spellcheck="true">
+
+    <h1>MathML Editor Project</h1>
+
+    <p>Gecko has a <a href="http://dxr.mozilla.org/mozilla-central/source/editor">"core" editor</a>
+      to edit HTML content, which is used in Thunderbird, SeaMonkey, Komposer,
+      BlueGriffon etc. This editor can also be enabled
+      in Web pages via the <code>contenteditable</code> attribute as in the
+      MDN Wiki or in the present page. Unfortunately, this editor is not aware
+      of MathML specificities. For example if you select a subexpression in the formulas below and delete them, you are likely to get "invalid-markup". If
+      you enter something like <code>x+7</code> this is likely to be interpreted
+      as a single <code>"x+7"</code> variable rather than
+      the sum of x and seven. The idea would hence be to
+      <strong>implement low-level editing features in the core C++ editor</strong>
+      (parsing small ascii math expressions typed by the user  ;
+      checking tree integrity when deleting or inserting math nodes ; better
+      cursor navigation)
+      as it is
+      the case in <a href="http://www.w3.org/Amaya/">Amaya</a>.</p>
+
+    <math display="block">
+      <mrow>
+        <mrow>
+          <mo>(</mo>
+          <mfrac>
+            <msup>
+              <mo>&part;</mo>
+              <mn>2</mn>
+            </msup>
+            <mrow>
+              <mo>&part;</mo>
+              <msup>
+                <mi>x</mi>
+                <mn>2</mn>
+              </msup>
+            </mrow>
+          </mfrac>
+          <mo>+</mo>
+          <mfrac>
+            <msup>
+              <mo>&part;</mo>
+              <mn>2</mn>
+            </msup>
+            <mrow>
+              <mo>&part;</mo>
+              <msup>
+                <mi>y</mi>
+                <mn>2</mn>
+              </msup>
+            </mrow>
+          </mfrac>
+          <mo>)</mo>
+        </mrow>
+        <msup>
+          <mrow>
+            <mo minsize="1.5">|</mo>
+            <mi>&phi;</mi>
+            <mo stretchy="false">(</mo>
+            <mi>x</mi>
+
+            <mo>+</mo>
+
+            <mi mathvariant="normal">i</mi>
+            <mi>y</mi>
+            <mo stretchy="false">)</mo>
+            <mo minsize="1.5">|</mo>
+          </mrow>
+          <mn>2</mn>
+        </msup>
+        <mo>=</mo>
+        <mn>0</mn>
+      </mrow>
+    </math>
+
+    <math display="block">
+      <mrow>
+        <mo>det</mo>
+        <mo>|</mo>
+        <mtable>
+          <mtr>
+            <mtd columnalign="center">
+              <msub>
+                <mi>c</mi>
+                <mn>0</mn>
+              </msub>
+            </mtd>
+            <mtd columnalign="center">
+              <msub>
+                <mi>c</mi>
+                <mn>1</mn>
+              </msub>
+            </mtd>
+            <mtd columnalign="center">
+              <msub>
+                <mi>c</mi>
+                <mn>2</mn>
+              </msub>
+            </mtd>
+            <mtd columnalign="center">
+              <mo>&hellip;</mo>
+            </mtd>
+            <mtd columnalign="center">
+              <msub>
+                <mi>c</mi>
+                <mi>n</mi>
+              </msub>
+            </mtd>
+          </mtr>
+          <mtr>
+            <mtd columnalign="center">
+              <msub>
+                <mi>c</mi>
+                <mn>1</mn>
+              </msub>
+            </mtd>
+            <mtd columnalign="center">
+              <msub>
+                <mi>c</mi>
+                <mn>2</mn>
+              </msub>
+            </mtd>
+            <mtd columnalign="center">
+              <msub>
+                <mi>c</mi>
+                <mn>3</mn>
+              </msub>
+            </mtd>
+            <mtd columnalign="center">
+              <mo>&hellip;</mo>
+            </mtd>
+            <mtd columnalign="center">
+              <msub>
+                <mi>c</mi>
+                <mrow>
+                  <mi>n</mi>
+                  <mo>+</mo>
+                  <mn>1</mn>
+                </mrow>
+              </msub>
+            </mtd>
+          </mtr>
+          <mtr>
+            <mtd columnalign="center">
+              <msub>
+                <mi>c</mi>
+                <mn>2</mn>
+              </msub>
+            </mtd>
+            <mtd columnalign="center">
+              <msub>
+                <mi>c</mi>
+                <mn>3</mn>
+              </msub>
+            </mtd>
+            <mtd columnalign="center">
+              <msub>
+
+                <mi>c</mi>
+
+                <mn>4</mn>
+              </msub>
+            </mtd>
+            <mtd columnalign="center">
+              <mo>&hellip;</mo>
+            </mtd>
+            <mtd columnalign="center">
+              <msub>
+                <mi>c</mi>
+                <mrow>
+                  <mi>n</mi>
+                  <mo>+</mo>
+                  <mn>2</mn>
+                </mrow>
+              </msub>
+            </mtd>
+          </mtr>
+          <mtr>
+            <mtd columnalign="center">
+              <mo>&vellip;</mo>
+            </mtd>
+            <mtd columnalign="center">
+              <mo>&vellip;</mo>
+            </mtd>
+            <mtd columnalign="center">
+              <mo>&vellip;</mo>
+            </mtd>
+            <mtd columnalign="center"></mtd>
+            <mtd columnalign="center">
+              <mo>&vellip;</mo>
+            </mtd>
+          </mtr>
+          <mtr>
+            <mtd columnalign="center">
+              <msub>
+                <mi>c</mi>
+                <mi>n</mi>
+              </msub>
+            </mtd>
+            <mtd columnalign="center">
+              <msub>
+                <mi>c</mi>
+                <mrow>
+                  <mi>n</mi>
+                  <mo>+</mo>
+                  <mn>1</mn>
+                </mrow>
+              </msub>
+            </mtd>
+            <mtd columnalign="center">
+              <msub>
+                <mi>c</mi>
+                <mrow>
+                  <mi>n</mi>
+                  <mo>+</mo>
+                  <mn>2</mn>
+                </mrow>
+              </msub>
+            </mtd>
+            <mtd columnalign="center">
+              <mo>&hellip;</mo>
+            </mtd>
+            <mtd columnalign="center">
+              <msub>
+                <mi>c</mi>
+                <mrow>
+                  <mn>2</mn>
+                  <mi>n</mi>
+                </mrow>
+              </msub>
+            </mtd>
+          </mtr>
+        </mtable>
+        <mo>|</mo>
+        <mo>&gt;</mo>
+        <mn>0</mn>
+      </mrow>
+    </math>
+
+    <math display="block">
+      <mrow>
+        <munder>
+          <mo>&sum;</mo>
+          <mrow>
+            <mi>p</mi>
+            <mtext>&nbsp;prime</mtext>
+          </mrow>
+        </munder>
+        <mi>f</mi>
+        <mo stretchy="false">(</mo>
+        <mi>p</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <msub>
+
+          <mo stretchy="false">&int;</mo>
+
+          <mrow>
+            <mi>t</mi>
+            <mo>&gt;</mo>
+            <mn>1</mn>
+          </mrow>
+        </msub>
+        <mi>f</mi>
+        <mo stretchy="false">(</mo>
+        <mi>t</mi>
+        <mo stretchy="false">)</mo>
+        <mo>&thinsp;</mo>
+        <mo mathvariant="italic">d</mo>
+        <mi>&pi;</mi>
+        <mo stretchy="false">(</mo>
+        <mi>t</mi>
+        <mo stretchy="false">)</mo>
+      </mrow>
+    </math>
+
+    <p>Another aspect of the project is to develop a
+      <strong>high-level XML+Javascript User Interface 
+        to insert mathematical constructions
+      </strong> similar to what exists in e.g.
+      <a href="https://en.wikipedia.org/wiki/Firemath">FireMath</a>.
+      For example create a math panel with several
+      buttons like <button><math><msqrt><mi>□</mi></msqrt></math></button>.
+      When you click on it, a new square root with empty placeholder
+      <math><msqrt><mi>□</mi></msqrt></math> will be created at the current
+      insertion point.
+      If the user has selected an expression, this will add a square root
+      around that expression. Do that for all basic MathML constructions like
+      <button><math><msup><mi>□</mi><mi>□</mi></msup></math></button>
+      <button><math><msub><mi>□</mi><mi>□</mi></msub></math></button>
+      <button><math><msubsup><mi>□</mi><mi>□</mi><mi>□</mi></msubsup></math></button>
+      <button><math><mfrac><mi>□</mi><mi>□</mi></mfrac></math></button> etc
+      The math panel could also have predefined constructions like
+      <button>
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <mfrac>
+            <mrow>
+              <mo>&#x2212;<!-- − --></mo>
+              <mi>b</mi>
+              <mo>&#x00B1;<!-- ± --></mo>
+              <msqrt>
+                <msup>
+                  <mi>b</mi>
+                  <mn>2</mn>
+                </msup>
+                <mo>&#x2212;<!-- − --></mo>
+                <mn>4</mn>
+                <mi>a</mi>
+                <mi>c</mi>
+              </msqrt>
+            </mrow>
+            <mrow>
+              <mn>2</mn>
+              <mi>a</mi>
+            </mrow>
+          </mfrac>
+        </math>
+      </button>
+    </p>
+
+  </body>
+</html>
