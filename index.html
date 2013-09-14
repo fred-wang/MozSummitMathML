@@ -55,30 +55,44 @@
       var delta = 6;
       var divs, n, nmax, running;
 
+      function showBlackBoard()
+      {
+        document.getElementById("slides").style.display = "block";
+      }
+
       function init()
       {
+        window.onkeydown = handleKeyEvent;
+        running = false;
+
+        // Init slide properties
         divs = document.getElementById('slides').children;
         nmax = divs.length;
-        window.onkeydown = handleKeyEvent;
         for (n = 0; n < nmax; n++) {
-          divs[n].style.zIndex = -1;
+          divs[n].style.visibility = "hidden";
           divs[n].style.position = "absolute";
         }
 
+        // Don't allow non-Gecko browsers.
         var ua = navigator.userAgent;
         var isGecko = ua.indexOf("Gecko") > -1 && ua.indexOf("KHTML") === -1;
         if (!isGecko) {
-          document.getElementById('warning').style.zIndex = 1;
+          for (n = 0; n < nmax - 1; n++) {
+            divs[n].style.zIndex = -1; // workaround for Safari's bug 116600
+          }
+          document.getElementById('warning').style.visibility = "visible";
+          showBlackBoard();
           return;
         }
 
+        // Remove the warning slide and display the first one.
         divs[nmax - 1].parentNode.removeChild(divs[nmax - 1]);
         nmax--;
-        n = nmax-1;
+        n = nmax - 1;
         nextSlide();
+        showBlackBoard();
 
-        setbevelled();
-        running = false;
+        setbevelled(); // launch the Javascript animation
       }
 
       function ensureFullScreen() {
@@ -115,16 +129,16 @@
       
       function prevSlide()
       {
-        divs[n].style.zIndex = -1;
+        divs[n].style.visibility = "hidden";
         n = (n - 1 + nmax) % nmax;
-        divs[n].style.zIndex = 1;
+        divs[n].style.visibility = "visible";
       }
 
       function nextSlide()
       {
-        divs[n].style.zIndex = -1;
+        divs[n].style.visibility = "hidden";
         n = (n + 1) % nmax;
-        divs[n].style.zIndex = 1;
+        divs[n].style.visibility = "visible";
       }
 
       function next()
@@ -146,7 +160,7 @@
   </head>
   <body onload="init()" onclick="ensureFullScreen()">
 
-    <div id="slides">
+    <div id="slides" style="display: none">
 
       <div>
         <img src="mathzilla.svg" height="512" alt="mathzilla"/><br/>
@@ -1109,8 +1123,9 @@ $ firefox output.html
         <li style="color: #aaf">Implement MathML Clipboard Specification (bug  539506)</li>
         <li style="color: #ffa">Create an EPUB reader or other math tools
           for FirefoxOS</li>
-        <li style="color: #ffa">Make FireVox
-          (and its MathSpeak support) work in recent versions of Firefox.</li>
+        <li style="color: #ffa">Make MathML accessible in Gecko (bug 916419).
+          Make the FireVox extension work with the latest version of Gecko?
+        </li>
       </ul>
       <div style="position: absolute; top: 550px;">
         <img src="mathzilla.svg" height="200" alt="mathzilla"/>
@@ -1136,7 +1151,7 @@ $ firefox output.html
      <div></div>
 
      <div id="warning"
-       style="z-index: -1; position: absolute; text-align:center;
+       style="visibility: hidden; position: absolute; text-align:center;
               color: #faa;">
       <br/>
       <br/>

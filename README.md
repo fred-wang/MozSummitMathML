@@ -16,7 +16,7 @@ Additional resources:
      - MathML Demos: [Basics](https://developer.mozilla.org/en-US/docs/Mozilla/MathML_Project/Basics), [Extras](https://developer.mozilla.org/fr/docs/Mozilla/MathML_Project/Extras), [Instiki](http://golem.ph.utexas.edu/wiki/instiki/show/Sandbox), [jquery-mathml](http://sdiehl.github.io/jquery-mathml/), [Jacques Distler's Blog](http://golem.ph.utexas.edu/~distler/blog/archives/002561.html)
      - MathML Tests: [Mozilla Torture Test](https://developer.mozilla.org/en-US/docs/Mozilla/MathML_Project/MathML_Torture_Test), [Joe Java's test](https://eyeasme.com/Joe/MathML/MathML_browser_test), [MathML Acid Tests](https://github.com/fred-wang/AcidTestsMathML#mathml-acid-tests)
      - [arXMLiv Project](http://arxmliv.kwarc.info/): Pick one of the 658847
-     output from 
+     output files from 
     [No Problems](http://arxmliv.kwarc.info/retval_detail.php?retval=no_problems),  [Warning](http://arxmliv.kwarc.info/retval_detail.php?retval=warning) or
     [Missing Macros](http://arxmliv.kwarc.info/retval_detail.php?retval=missing_macros) or [Error](http://arxmliv.kwarc.info/retval_detail.php?retval=error) and open the xhtml file. Here I did it for you: [1206.7017](http://arxmliv.kwarc.info/files/1206/1206.7017/1206.7017.xhtml), [0704.1173](http://arxmliv.kwarc.info/files/0704/0704.1173/0704.1173.xhtml), [cond-mat.0611593](http://arxmliv.kwarc.info/files/0611/cond-mat.0611593/cond-mat.0611593.xhtml), [math.0211411](http://arxmliv.kwarc.info/files/0211/math.0211411/math.0211411.xhtml), [quant-ph.0102023](http://arxmliv.kwarc.info/files/0102/quant-ph.0102023/quant-ph.0102023.xhtml), [alg-geom.9202012](http://arxmliv.kwarc.info/files/9202/alg-geom.9202012/alg-geom.9202012.xhtml), [0804.2714](http://arxmliv.kwarc.info/files/0804/0804.2714/0804.2714.xhtml), [astro-ph.0409266](http://arxmliv.kwarc.info/files/0409/astro-ph.0409266/astro-ph.0409266.xhtml), [1206.7094](http://arxmliv.kwarc.info/files/1206/1206.7094/1206.7094.xhtml)... That gives a success rate of about 60% and
     a conversion of 95% of the arXMLiv LaTeX papers.
@@ -42,8 +42,8 @@ Additional resources:
     Insert → HTML to insert some MathML code. Of course, you probably don't want
     to do that by hand, so use one of the MathML authoring tools described
     below. For example, the
-    [MathBird add-on](http://disruptive-innovations.com/zoo/MathBird/) is
-    give you access to a menu Insert → MathML that opens an ASCIIMathML
+    [MathBird add-on](http://disruptive-innovations.com/zoo/MathBird/)
+    gives you access to a menu Insert → MathML that opens an ASCIIMathML
     parser with preview. You can try to send your email to various mail clients
     to see how they handle the MathML equations.
     - [InstantBird](http://www.instantbird.com/): Install the
@@ -71,7 +71,8 @@ Additional resources:
        There is also an [online LaTeX editor](http://latexml.mathweb.org/editor)
        with on-the-fly preview.
      - By default, **LibreOffice** uses a "semi-WYSIWYG" editor that is, you
-      enter a simple "StarMath" syntax and have access to a math preview and to
+      enter a simple "StarMath" syntax and you
+      have access to a math preview and to
       an equation panel with predefined constructions.
       There is an experimental WYSIWYG
       editor that
@@ -84,10 +85,10 @@ Additional resources:
       improved in version 4.2.
      - **Handwriting Recognition**: Go to
        [webdemo.visionobjects](http://webdemo.visionobjects.com) and select
-       "Web Equation". On recent Windows version, you can also try the
+       "Web Equation". On recent Windows versions, you can also try the
        "Math Input Panel" to transmit MathML to programs supporting the
        "MathML Clipboard Specification" (see getting involved below).
-       Watch this video for the
+       Watch this video for an example of handwriting recognition in the
        [Samsung Galaxy Note](https://www.youtube.com/watch?v=ksBWWpbsOk0)
 
   5. Future
@@ -110,26 +111,34 @@ Additional resources:
       Note: be sure that open-type-fonts.html points to a local server
       (because of the [Same-origin policy](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Same_origin_policy_for_JavaScript)) and that the "unpacked"
       version of the open-type-fonts branch is used.
-      - Benetch has a [prototype implementation of MathSpeak in MathJax](https://github.com/benetech/mathjax) (not tested). Other tools like ChromeVox or
-      MathPlayer also have this feature. Mozilla had FireVox, but unfortunately
+      - Benetech has a [prototype implementation of MathSpeak in MathJax](https://github.com/benetech/mathjax) (not tested). Other tools like ChromeVox or
+      MathPlayer also have this feature. 
+      Watch [Advancing Web Accessibility with ChromeVox](https://www.youtube.com/watch?v=YyWu9HB9QtU) for an example.
+      Mozilla had FireVox, but unfortunately
       it seems that it is no longer maintained and not compatible with the most
-      recent version of Firefox (see getting involved below).
-      Watch [Advancing Web Accessibility with ChromeVox](https://www.youtube.com/watch?v=YyWu9HB9QtU).
+      recent version of Firefox. Also MathML nodes are not exposed as a
+      hierachical accessible tree [bug 916419](https://bugs.webkit.org/show_bug.cgi?id=916419) (see getting involved below).
       - There have been a few improvements to WebKit MathML. Try a 
         [Nightly build](http://nightly.webkit.org) or check how
         to [build one of the port](http://trac.webkit.org/wiki#WebKitPorts).
         Two tracking bugs: [Basic Support](https://bugs.webkit.org/show_bug.cgi?id=99623) and [MathJax](https://bugs.webkit.org/show_bug.cgi?id=84019).
     - Getting involved:
-      - Complete Gecko's MathML support ([bugs 534959](https://bugzilla.mozilla.org/show_bug.cgi?id=534959) and [525772](https://bugzilla.mozilla.org/show_bug.cgi?id=525772))
-      - Fix issues that prevent Gecko's Native MathML from being the default in MathJax: [bug 687809](https://bugzilla.mozilla.org/show_bug.cgi?id=687809)
-      - Improve Font Installation bugs [770005](https://bugzilla.mozilla.org/show_bug.cgi?id=770005), [467729](https://bugzilla.mozilla.org/show_bug.cgi?id=467729) and [648548](https://bugzilla.mozilla.org/show_bug.cgi?id=648548)
+      - Complete Gecko's MathML support ([bugs 534959](https://bugzilla.mozilla.org/show_bug.cgi?id=534959) and [525772](https://bugzilla.mozilla.org/show_bug.cgi?id=525772)).
+      - Fix issues that prevent Gecko's Native MathML from being the default in MathJax: [bug 687809](https://bugzilla.mozilla.org/show_bug.cgi?id=687809). The missing features are included in the previous point but there are a few layout bugs too.
+      - Improve Font Installation [770005](https://bugzilla.mozilla.org/show_bug.cgi?id=770005), [467729](https://bugzilla.mozilla.org/show_bug.cgi?id=467729) and [648548](https://bugzilla.mozilla.org/show_bug.cgi?id=648548)
       - Add support for more Open Type Math fonts: [bug 407059](https://bugzilla.mozilla.org/show_bug.cgi?id=407059)
       - Make the [editor](http://dxr.mozilla.org/mozilla-central/source/editor) aware of MathML: [bug 78128](https://bugzilla.mozilla.org/show_bug.cgi?id=78128)
-      - Implement MathML Clipboard Specification: [bug 539506](https://bugzilla.mozilla.org/show_bug.cgi?id=539506)
+      - Implement MathML Clipboard Specification: [bug 539506](https://bugzilla.mozilla.org/show_bug.cgi?id=539506). Watch
+[this video](http://www.screenr.com/dAO) for an example.
+      Note that the Firefox context menu has
+      a command to show the MathML source but it would be best to directly
+      copy the math into the clipboard that having to select the MathML source!
       - Create an EPUB reader or other math tools for FirefoxOS!
         Again, watch the video mentioned above for the
-        [Samsung Galaxy Note](https://www.youtube.com/watch?v=ksBWWpbsOk0)
-      - Make [FireVox](http://firevox.clcworld.net/) work in recent versions of Firefox. It seems that there was an updated version called ML-FireVox at some
+        [Samsung Galaxy Note](https://www.youtube.com/watch?v=ksBWWpbsOk0).
+        You might want to try
+        [EPUBReader](https://addons.mozilla.org/firefox/addon/epubreader/).
+      - Make MathML accessible in Firefox: [bug 916419](https://bugzilla.mozilla.org/show_bug.cgi?id=916419). Also, make [FireVox](http://firevox.clcworld.net/) work in recent versions of Firefox. It seems that there was an updated version called ML-FireVox at some
       point, but the Web site is down. 
      - See also [MathML](https://developer.mozilla.org/docs/Web/MathML),
        [MathMLProject](https://developer.mozilla.org/en-US/docs/Mozilla/MathML_Project)
