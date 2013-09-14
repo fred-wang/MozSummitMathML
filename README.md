@@ -127,7 +127,7 @@ Additional resources:
       - Fix issues that prevent Gecko's Native MathML from being the default in MathJax: [bug 687809](https://bugzilla.mozilla.org/show_bug.cgi?id=687809). The missing features are included in the previous point but there are a few layout bugs too.
       - Improve Font Installation [770005](https://bugzilla.mozilla.org/show_bug.cgi?id=770005), [467729](https://bugzilla.mozilla.org/show_bug.cgi?id=467729) and [648548](https://bugzilla.mozilla.org/show_bug.cgi?id=648548)
       - Add support for more Open Type Math fonts: [bug 407059](https://bugzilla.mozilla.org/show_bug.cgi?id=407059)
-      - Make the [editor](http://dxr.mozilla.org/mozilla-central/source/editor) aware of MathML: [bug 78128](https://bugzilla.mozilla.org/show_bug.cgi?id=78128). See <a href="editor.html">editor.html</a> for more details.
+      - Make the [editor](http://dxr.mozilla.org/mozilla-central/source/editor) aware of MathML: [bug 78128](https://bugzilla.mozilla.org/show_bug.cgi?id=78128). See <a href="http://fred-wang.github.io/MozSummitMathML/editor.html">editor.html</a> for more details.
       - Implement MathML Clipboard Specification: [bug 539506](https://bugzilla.mozilla.org/show_bug.cgi?id=539506). Watch
 [this video](http://www.screenr.com/dAO) for an example.
       Note that the Firefox context menu has
