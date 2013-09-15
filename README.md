@@ -101,7 +101,7 @@ Additional resources:
     Native MathML Gecko rendering, there is a WMFlabs instance here:
     [Discrete Fourier Transform](http://math-test2.instance-proxy.wmflabs.org/wiki/Discrete_Fourier_transform). Click
        "random page" if you want to read more articles.
-       - You can also try a [Math Search](http://math-test2.instance-proxy.wmflabs.org/wiki/Special:MathSearch?pattern=\exp%28%3Fx+%2B+%3Fy%29).
+       - You can also try a [Math Search](http://math-test2.instance-proxy.wmflabs.org/wiki/Special:MathSearch?pattern=\\exp%28%3Fx+%2B+%3Fy%29).
     - MathJax:
        - MathJax 2.3 will add support for new Open Type Fonts. Clone
        [this GitHub branch](https://github.com/fred-wang/MathJax/tree/open-type-fonts) and try the `open-type-fonts.html` test on this repository.
