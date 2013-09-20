@@ -117,7 +117,7 @@ Additional resources:
       Mozilla had FireVox, but unfortunately
       it seems that it is no longer maintained and not compatible with the most
       recent version of Firefox. Also MathML nodes are not exposed as a
-      hierachical accessible tree [bug 916419](https://bugs.webkit.org/show_bug.cgi?id=916419) (see getting involved below).
+      hierachical accessible tree [bug 916419](https://bugzilla.mozilla.org/show_bug.cgi?id=916419) (see getting involved below).
       - There have been a few improvements to WebKit MathML. Try a 
         [Nightly build](http://nightly.webkit.org) or check how
         to [build one of the port](http://trac.webkit.org/wiki#WebKitPorts).
@@ -138,7 +138,7 @@ Additional resources:
         [Samsung Galaxy Note](https://www.youtube.com/watch?v=ksBWWpbsOk0).
         You might want to try
         [EPUBReader](https://addons.mozilla.org/firefox/addon/epubreader/).
-      - Make MathML accessible in Firefox: [bug 916419](https://bugzilla.mozilla.org/show_bug.cgi?id=916419). Also, make [FireVox](http://firevox.clcworld.net/) work in recent versions of Firefox. It seems that there was an updated version called ML-FireVox at some
+      - Make MathML accessible in Firefox: [bug 916419](https://bugzilla.mozilla.org/show_bug.cgi?id=916419), [bug 917598](https://bugzilla.mozilla.org/show_bug.cgi?id=917598). Also, make [FireVox](http://firevox.clcworld.net/) work in recent versions of Firefox. It seems that there was an updated version called ML-FireVox at some
       point, but the Web site is down. 
      - See also [MathML](https://developer.mozilla.org/docs/Web/MathML),
        [MathMLProject](https://developer.mozilla.org/en-US/docs/Mozilla/MathML_Project)
