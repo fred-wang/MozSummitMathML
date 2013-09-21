@@ -48,7 +48,9 @@ Additional resources:
     to see how they handle the MathML equations.
     - [InstantBird](http://www.instantbird.com/): Install the
     [MathJax LaTeX](https://addons.instantbird.org/en-US/instantbird/addon/340)
-    plugin. (Not tested, waiting Quentin's feedback on this)
+    plugin. By default, the MathJax HTML-CSS output mode is used, you can
+    switch to the native MathML output by right clicking on a formula and 
+    selecting Math Settings → Math Renderer → MathML.
     - [BlueGriffon](http://bluegriffon.org/): Buy and install the
     [MathML add-on](http://www.bluegriffon.com/index.php?pages/MathML). (Not
     tested)
