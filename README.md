@@ -27,6 +27,7 @@ Additional resources:
     select "MathJax". By default, the MathJax HTML-CSS output is used. To select
     the Native MathML output, right click on a formula and select 
     Math Settings → Math Renderer → MathML. You may also try the SVG output. 
+    - [Connexions](http://cnx.org/). See also [Mathematics E-learning Community Benefits from MathJax](http://www.mathjax.org/resources/articles-and-presentations/mathematics-e-learning-community-benefits-from-mathjax/).
 
   3. MathML in Gecko applications
     - Firefox: See the demos above ;-)
