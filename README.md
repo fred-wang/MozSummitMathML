@@ -9,7 +9,7 @@ Slides for the Innovation Fair of Mozilla Summit 2013
 
 Additional resources:
 
-  1. History: [Mozilla MathML Project Update](https://developer.mozilla.org/en-US/docs/Mozilla/MathML_Project/Updates) ; [History of the Mozilla Project](https://www.mozilla.org/en-US/about/history/) ; [Mozilla mascot](https://en.wikipedia.org/wiki/Mozilla_%28mascot%29) ; [History of the World Wide Web](https://en.wikipedia.org/wiki/History_of_the_World_Wide_Web) ; [Introducing the Mozilla Science Lab](https://blog.mozilla.org/blog/2013/06/14/5992/)
+  1. History: [Mozilla MathML Project Update](https://developer.mozilla.org/en-US/docs/Mozilla/MathML_Project/Updates) ; [History of the Mozilla Project](https://www.mozilla.org/en-US/about/history/) ; [Mozilla mascot](https://en.wikipedia.org/wiki/Mozilla_%28mascot%29) ; [History of the World Wide Web](https://en.wikipedia.org/wiki/History_of_the_World_Wide_Web) ; [HTML version timeline](https://en.wikipedia.org/wiki/HTML#HTML_versions_timeline) ; [HTML 3.0 &lt;MATH&gt;](http://www.w3.org/MarkUp/html3/maths.html) ; [Introducing the Mozilla Science Lab](https://blog.mozilla.org/blog/2013/06/14/5992/)
 
   2. MathML demos ; install [math fonts](https://developer.mozilla.org/en-US/docs/Mozilla/MathML_Project/Fonts) for best rendering.
      - MathML Start Page in various languages: [English](https://developer.mozilla.org/en-US/docs/Mozilla/MathML_Project/Start), [Arabic](https://developer.mozilla.org/ar/docs/Mozilla_MathML_Project/Start), [Chinese](https://developer.mozilla.org/zh-CN/docs/Mozilla_MathML_Project/Start), [Hebrew](https://developer.mozilla.org/he/docs/Mozilla_MathML_Project/Start), [Thai](https://developer.mozilla.org/th/docs/Mozilla_MathML_Project/Start)
