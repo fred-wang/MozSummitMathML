@@ -104,7 +104,7 @@ Additional resources:
     Native MathML Gecko rendering, there is a WMFlabs instance here:
     [Discrete Fourier Transform](http://math-test2.instance-proxy.wmflabs.org/wiki/Discrete_Fourier_transform). Click
        "random page" if you want to read more articles.
-       - You can also try a [Math Search](http://math-test2.instance-proxy.wmflabs.org/wiki/Special:MathSearch?pattern=\\exp%28%3Fx+%2B+%3Fy%29).
+       - You can also try a [Math Search](http://demo.formulasearchengine.com/index.php/Special:MathSearch).
     - MathJax:
        - MathJax 2.3 will add support for new Open Type Fonts. Clone
        [this GitHub branch](https://github.com/fred-wang/MathJax/tree/open-type-fonts) and try the `open-type-fonts.html` test on this repository.
@@ -115,12 +115,15 @@ Additional resources:
       (because of the [Same-origin policy](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Same_origin_policy_for_JavaScript)) and that the "unpacked"
       version of the open-type-fonts branch is used.
       - Benetech has a [prototype implementation of MathSpeak in MathJax](https://github.com/benetech/mathjax) (not tested). Other tools like ChromeVox or
-      MathPlayer also have this feature. 
-      Watch [Advancing Web Accessibility with ChromeVox](https://www.youtube.com/watch?v=YyWu9HB9QtU) for an example.
+      MathPlayer or Apple VoiceOver in iOS7 also have this feature. 
+      Watch [Advancing Web Accessibility with ChromeVox](https://www.youtube.com/watch?v=YyWu9HB9QtU) or
+      [Spoken Mathematics on the Web](http://www.youtube.com/watch?v=HVviF06S1T8) for an example.
       Mozilla had FireVox, but unfortunately
       it seems that it is no longer maintained and not compatible with the most
       recent version of Firefox. Also MathML nodes are not exposed as a
-      hierachical accessible tree [bug 916419](https://bugzilla.mozilla.org/show_bug.cgi?id=916419) (see getting involved below).
+      hierachical accessible tree [bug 916419](https://bugzilla.mozilla.org/show_bug.cgi?id=916419) (see getting involved below). A very early prototype has
+      recently been implemented by James Teh in 
+      this [http://community.nvda-project.org/try/mathml/nvda_snapshot_try-mathml-9455,8991518.exe](NVDA try build) and works with Firefox Windows Nightly.
       - There have been a few improvements to WebKit MathML. Try a 
         [Nightly build](http://nightly.webkit.org) or check how
         to [build one of the port](http://trac.webkit.org/wiki#WebKitPorts).
