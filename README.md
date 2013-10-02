@@ -22,11 +22,11 @@ Additional resources:
     a conversion of 95% of the arXMLiv LaTeX papers.
      - **Wikipedia**: Try a random math article like [Normal_distribution](https://en.wikipedia.org/wiki/Normal_distribution).
      Currently, PNG images are used for all
-    anonymous users. If you want to enable MathJax in Wikipedia, you must create
-    a user account. Once logged in, go to Preference → Appearance → Math and
-    select "MathJax". By default, the MathJax HTML-CSS output is used. To select
-    the Native MathML output, right click on a formula and select 
-    Math Settings → Math Renderer → MathML. You may also try the SVG output. 
+     anonymous users. If you want to enable MathJax in Wikipedia, you must create
+     a user account. Once logged in, go to Preference → Appearance → Math and
+     select "MathJax". By default, the MathJax HTML-CSS output is used. To select
+     the Native MathML output, right click on a formula and select 
+     Math Settings → Math Renderer → MathML. You may also try the SVG output. 
     - [Connexions](http://cnx.org/). See also [Mathematics E-learning Community Benefits from MathJax](http://www.mathjax.org/resources/articles-and-presentations/mathematics-e-learning-community-benefits-from-mathjax/).
 
   3. MathML in Gecko applications
@@ -120,10 +120,10 @@ Additional resources:
       [Spoken Mathematics on the Web](http://www.youtube.com/watch?v=HVviF06S1T8) for an example.
       Mozilla had FireVox, but unfortunately
       it seems that it is no longer maintained and not compatible with the most
-      recent version of Firefox. Also MathML nodes are not exposed as a
-      hierachical accessible tree [bug 916419](https://bugzilla.mozilla.org/show_bug.cgi?id=916419) (see getting involved below). A very early prototype has
-      recently been implemented by James Teh in 
-      this [http://community.nvda-project.org/try/mathml/nvda_snapshot_try-mathml-9455,8991518.exe](NVDA try build) and works with Firefox Windows Nightly.
+      recent version of Firefox. An experimental MathML support for NVDA has
+      recently been provided by James Teh.
+      Also, MathML nodes are not exposed as a
+      hierachical accessible tree [bug 916419](https://bugzilla.mozilla.org/show_bug.cgi?id=916419) (see getting involved below).
       - There have been a few improvements to WebKit MathML. Try a 
         [Nightly build](http://nightly.webkit.org) or check how
         to [build one of the port](http://trac.webkit.org/wiki#WebKitPorts).
@@ -146,6 +146,10 @@ Additional resources:
         [EPUBReader](https://addons.mozilla.org/firefox/addon/epubreader/).
       - Make MathML accessible in Firefox: [bug 916419](https://bugzilla.mozilla.org/show_bug.cgi?id=916419), [bug 917598](https://bugzilla.mozilla.org/show_bug.cgi?id=917598). Also, make [FireVox](http://firevox.clcworld.net/) work in recent versions of Firefox. It seems that there was an updated version called ML-FireVox at some
       point, but the Web site is down. 
+      An [NVDA try build](http://community.nvda-project.org/try/mathml/nvda_snapshot_try-mathml-9455,8991518.exe) with experimental MathML support has
+      recently been provided by James Teh 
+      and works with [Firefox Windows Nightly](http://nightly.mozilla.org/) ;   
+      try to read <a href="http://fred-wang.github.io/MozSummitMathML/accessibility.html">accessibility.html</a> with that tool.
      - See also [MathML](https://developer.mozilla.org/docs/Web/MathML),
        [MathMLProject](https://developer.mozilla.org/en-US/docs/Mozilla/MathML_Project)
        [MathML:HomePage](https://wiki.mozilla.org/MathML:Home_Page).
