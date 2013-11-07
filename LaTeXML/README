@@ -3,7 +3,7 @@ This demonstrates how to use LaTeX to generate documents in various formats:
 - PDF: pdf/thesis.pdf
 - HTML: html/thesis.html
 - HTML with MathJax fallback: html-mathjax/thesis.html
-- EPUB: epub/???
+- EPUB: epub/thesis.epub
 
 Type "make help" for further details.
 

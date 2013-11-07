@@ -68,8 +68,10 @@ Additional resources:
        how to install and use them.
        itex2MML is used by instiki and you can play with the
        [Sandbox](http://golem.ph.utexas.edu/wiki/instiki/show/Sandbox).
-       For LaTeXML, it is recommended to use the SVN version for now as the
-       release is very old ; you can try the `LaTeXML/` directory on this
+       For LaTeXML, it is recommended to use the
+       [development version](https://github.com/KWARC/LaTeXML)
+       for now as
+       the release is very old ; you can try the `LaTeXML/` directory on this
        repository for an example and various configurations.
        There is also an [online LaTeX editor](http://latexml.mathweb.org/editor)
        with on-the-fly preview.

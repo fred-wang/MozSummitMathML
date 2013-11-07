@@ -1,6 +1,7 @@
 PDFLATEX=pdflatex
 LATEXML=latexml
 LATEXMLPOST=latexmlpost
+LATEXMLC=latexmlc
 
 help:
 	@echo
@@ -40,18 +41,20 @@ thesis.xml:
 
 html: thesis.xml
 # LaTeXML, HTML output.
-	mkdir html
+	mkdir -p html
 	$(LATEXMLPOST) --dest html/thesis.html --format=html5 --splitat=section thesis.xml
 
 html-mathjax: thesis.xml
 # LaTeXML, HTML output with MathJax fallback.
-	mkdir html-mathjax;
+	mkdir -p html-mathjax;
 	cd html-mathjax; \
 	$(LATEXMLPOST) --dest thesis.html --format=html5 --splitat=section --javascript=../mathjax.js ../thesis.xml
 
 epub: thesis.xml
 # LaTeXML, EPUB output.
-	mkdir epub;
+	mkdir -p epub;
+	cd epub; \
+	$(LATEXMLC) --dest thesis.epub --splitat=section ../thesis.tex
 
 clean:
 # Cleaning intermediary files.
